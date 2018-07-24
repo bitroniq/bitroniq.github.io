@@ -1,0 +1,53 @@
+<section id="contact" class="google-map white-bg page-section-pt">
+ <div class="container-fluid">
+  <div id="google-map">
+	 <div id="map-canvas"></div>
+ </div>
+ <div class="contact"> 
+ 	<h2>Say Hi It’s Free! </h2>
+ 	<div class="address">
+ 	  <ul>
+ 	  	<li><span class="ti-location-pin"></span> <p>24 SL Road, London. UK</p> </li>
+ 	  	<li><span class="ti-marker-alt"></span> <p>sam@website.com </p></li>
+ 	  	<li><span class="ti-mobile"></span> <p>(123)-456-7890 </p></li>
+ 	  	<li><span class="ti-printer"></span> <p>(098)-765-4321 </p></li>
+ 	  </ul>
+ 	</div>
+ 	<div class="social">
+ 	 <h4>I'm also on Social Networks</h4>
+ 	 <p>Follow me on social networks to get the latest news, blog, updates and much more.</p>
+	 <ul>
+ 	  	 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+         <li><a href="#"><i class="fa fa-dribbble"></i> </a></li>
+         <li><a href="#"><i class="fa fa-vimeo"></i> </a></li>
+         <li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
+         <li><a href="#"><i class="fa fa-behance"></i> </a></li>
+         <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+ 	  </ul>
+ 	</div>
+  <div class="button-large"><a href="#">Download my CV</a></div>
+ </div>
+ <div class="contact-form">
+   <div id="contact-wrapper">
+    <div class="contact-content">
+     <div id="formmessage">Success/Error Message Goes Here</div>
+       <form class="form-horizontal" id="contactform" method="post" action="php/contact-form.php">
+          <div class="contact-form">
+            <h4>Drop me a line</h4>
+            <p>Use this form to tell me about your project goals and needs. I will be in touch within 24 hours.</p>
+               <input id="name" type="text" placeholder="Name*"  name="name">
+               <input type="email" placeholder="Email*" name="email">
+               <input type="text" placeholder="Phone*" name="phone">
+               <textarea class="input-message" placeholder="Comment*" rows="7" name="message"></textarea>
+             <input type="hidden" name="action" value="sendEmail"/>
+            <button id="submit" name="submit" type="submit" value="Send" class="button-small"> Say Hello! </button>
+          </div> 
+        </form>
+        <div id="ajaxloader" style="display:none"><img class="center-block" src="assets/images/ajax-loader-white.gif" alt=""></div>
+   </div>
+   <a href="#" class="contact-toggle"><span class="ti-comments"></span></a>
+  </div>
+ </div>
+ </div>
+</section>
