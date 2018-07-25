@@ -3,8 +3,8 @@ backend:
   repo: bitroniq/bitroniq.github.io # Path to your Github repository
   branch: master # Branch to update
 
-media_folder: "src/site/static/images/uploads" # Media files will be stored here
-public_folder: "/images/uploads" # The src attribute for uploaded media
+media_folder: "assets/images/uploads" # Media files will be stored here
+public_folder: "/assets/images/uploads" # The src attribute for uploaded media
 
 collections:
   - name: "recipe" # Used in routes, e.g. /admin/collections/recipe
@@ -34,4 +34,4 @@ collections:
               - {label: "Amount", name: "amount", widget: "number"}
               - {label: "Unit", name: "unit", widget: "select", options: ["", "dl", "l", "kg"]}
               - {label: "Name", name: "name", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"}`
