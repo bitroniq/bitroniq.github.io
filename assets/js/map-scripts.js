@@ -51,7 +51,7 @@ NOTE:
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(-37.8172098,144.9537367),
         map: map,
-    icon: 'images/icons/map-marker.png',
+    icon: 'assets/images/icons/map-marker.png',
     });
     }
 
