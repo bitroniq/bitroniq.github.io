@@ -482,7 +482,7 @@ table.ui-datepicker-calendar tbody td.highlight  a {   background: #c6c6c6;   co
 /*contact-form*/
 ::-webkit-input-placeholder { color: #ffffff; }
 :-moz-placeholder { color: #ffffff; }
-input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px black inset !important; color: #ffffff !important; }
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px #26ade4 inset !important; color: #ffffff !important; -webkit-text-fill-color: white !important; }
 input { background: transparent; border:none; height: 45px; padding-left: 10px; transition:all 0.5s ease-in-out; transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out; -ms-transition:all 0.5s ease-in-out; -o-transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; font-size: 14px; color: #ffffff; width: 100%; }
 input:focus { background: transparent; box-shadow: 0 0 17px 0 #ebebeb; }
 textarea  { resize: vertical; background: transparent; width: 100%; padding: 10px; border: none; transition:all 0.5s ease-in-out; transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out; -ms-transition:all 0.5s ease-in-out; -o-transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; font-size: 14px; }
