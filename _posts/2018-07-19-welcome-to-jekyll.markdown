@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Welcome to Jekyll!
+excerpt: "Post with example tables and headers"
 date:   2018-07-19
 categories: jekyll update
 ---
