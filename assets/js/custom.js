@@ -27,6 +27,7 @@ NOTE:
 :: Popup gallery
 :: Contect open
 :: Placeholder
+:: Mail obfuscator
 
 ======================================
 [ End table content ]
@@ -339,3 +340,13 @@ $('[placeholder]').focus(function() {
 });
 
 })(jQuery);
+
+/*********************************
+          Mail obfuscator
+**********************************/
+
+$('#unspamMail').hover(function(){
+  // here you can use whatever replace you want
+  var newHref = $(this).attr('href').replace('spam', 'info');
+  $(this).attr('href', newHref);
+});
