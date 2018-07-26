@@ -149,3 +149,66 @@
  </div>
  </div>
 </section>
+
+
+
+
+
+<section id="blog" class="blog white-bg page-section">
+ <div class="container-fluid">
+   <div class="row">
+   <div class="col-lg-12 col-md-12">
+    <div class="section-title">
+          <div class="section-title-name">
+            <span>My Latest Blog Posts</span>
+            <h2>From the blog </h2>
+          </div>  
+          <div class="title-name-gray">
+            <strong>Blog</strong>
+         </div>
+       </div>
+   </div>
+   </div>   
+ <div class="row">
+
+
+{% for post in paginator.posts %}
+  <div class="col-lg-3 col-md-6 col-sm-6">
+   <div class="blog-block">
+        <div class="blog-image">
+          <img class="img-responsive" src="/assets/images/blog/01.jpg" alt="">
+          <div class="blog-date">
+            <span><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
+          </div>
+        </div>
+        <div class="blog-info">
+         <div class="blog-meta">
+            <p><span class="ti-comment-alt"></span> <a href="#">4</a></p>
+            <p><span class="ti-user"></span> <a href="#">Admin </a></p>
+            <p><span class="ti-folder"></span> <a href="#">Development</a></p>
+         </div>
+         <div class="blog-content">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <p>{{ post.excerpt }}</p>
+            <div class="blog-bottom clearfix">
+             <div class="button-small">
+               <a href="{{ post.url }}">Read More..</a>
+               </div>
+            <div class="social pull-right">
+               <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+               </ul>
+            </div>   
+          </div>
+         </div>
+        </div>
+   </div>
+  </div>
+{% endfor %}
+
+
+ </div>
+ </div>
+</section>

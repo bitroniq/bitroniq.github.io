@@ -1,0 +1,147 @@
+table {
+    background-color: transparent;
+}
+caption {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #777;
+    text-align: left;
+}
+th {
+    text-align: left;
+}
+table {
+    max-width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #dedede;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    text-transform: none;
+    background-color: #777;
+    color: white;
+    text-align: left;
+}
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+
+table > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+table col[class*="col-"] {
+    position: static;
+    display: table-column;
+    float: none;
+}
+table td[class*="col-"],
+table th[class*="col-"] {
+    position: static;
+    display: table-cell;
+    float: none;
+}
+
+table tr td {
+    hyphens: auto;
+    border: 0px;
+}
+
+/* ====================
+  for syntax highlighter */
+table.rouge-table  {
+    background-color: transparent;
+    max-width: 100%;
+    margin-bottom: 0px;
+    border: 0px solid #dedede;
+    padding: 0px;
+}
+
+table.rouge-table caption {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #777;
+    text-align: left;
+}
+table.rouge-table th {
+    text-align: left;
+}
+
+table.rouge-table > thead > tr > th,
+table.rouge-table > tbody > tr > th,
+table.rouge-table > tfoot > tr > th,
+table.rouge-table > thead > tr > td,
+table.rouge-table > tbody > tr > td,
+table.rouge-table > tfoot > tr > td {
+    padding: 0px;
+    vertical-align: top;
+    border-top: 0px solid #ddd;
+}
+table.rouge-table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 0px solid #ddd;
+    text-transform: none;
+    background-color: #777;
+    color: white;
+    text-align: left;
+}
+table.rouge-table > caption + thead > tr:first-child > th,
+table.rouge-table > colgroup + thead > tr:first-child > th,
+table.rouge-table > thead:first-child > tr:first-child > th,
+table.rouge-table > caption + thead > tr:first-child > td,
+table.rouge-table > colgroup + thead > tr:first-child > td,
+table.rouge-table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+
+table.rouge-table > tbody > tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+table.rouge-table col[class*="col-"] {
+    position: static;
+    display: table-column;
+    float: none;
+}
+table.rouge-table td[class*="col-"],
+table.rouge-table th[class*="col-"] {
+    position: static;
+    display: table-cell;
+    float: none;
+}
+
+table.rouge-table tr td {
+    hyphens: auto;
+    padding: 0px;
+}
+
+table.rouge-table pre {
+    display: block;
+    padding: 0 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #fff;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+}

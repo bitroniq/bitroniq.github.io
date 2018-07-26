@@ -1,12 +1,29 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2018-07-19 19:06:03 +0200
+title:  Welcome to Jekyll!
+date:   2018-07-19
 categories: jekyll update
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+To jest H1
+==========
+
+# To jest chyba też H1
+
+Jakiś tekst
+
+## A to h2
+
+Tu walnę tabelkę
+
+| Priority apples | Second priority | Third priority |
+|-----------------|-----------------|----------------|
+| ambrosia        | gala            | red delicious  |
+| pink lady       | jazz            | macintosh      |
+| honeycrisp      | granny smith    | fuji           |
 
 Jekyll also offers powerful support for code snippets:
 
