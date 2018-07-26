@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Exclude Post from Search Index"
+excerpt: "This is excerpt of post describing excluding from search index"
 search: false
 categories: 
   - Jekyll

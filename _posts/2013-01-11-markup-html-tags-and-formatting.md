@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Markup: HTML Tags and Formatting"
+excerpt: "The excerpt of post with markup html tags and formatting"
 header:
   teaser: "assets/images/markup-syntax-highlighting-teaser.jpg"
 categories:
@@ -112,6 +113,7 @@ Do It Live
     Date of birth: <input type="text" size="10">
   </fieldset>
 </form>
+{: .contact-form .clearfix}
 
 ## Buttons
 

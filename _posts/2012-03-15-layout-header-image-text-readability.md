@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Layout: Header Image and Text Readability"
+excerpt: "This is excerpt of post with example header image and text readability"
 header:
   image: /assets/images/unsplash-image-4.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
