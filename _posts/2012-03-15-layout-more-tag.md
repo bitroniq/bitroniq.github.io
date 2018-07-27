@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Layout: More Tag"
+excerpt: "Right after this sentence there should be a **continue reading** link of some sort in archive-index pages."
 categories:
   - Layout
   - Uncategorized

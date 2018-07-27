@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Markup: Text Alignment"
+excerpt: "Different text alignment options"
 categories:
   - Markup
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Markup: Title with Special&nbsp;---&nbsp;Characters"
+excerpt: "The presentation of title with special chars"
 categories:
   - Markup
 tags:

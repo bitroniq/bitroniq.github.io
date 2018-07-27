@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Markup: Image Alignment"
+excerpt: "Different image alignment options"
 categories:
   - Markup
 tags:
