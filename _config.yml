@@ -1,4 +1,7 @@
-# Welcome to Jekyll!
+# Jekyll configuration
+# Site: piotrkowalski.info
+# Site: bitroniq.github.io
+# Copyright (c) 2018 Piotr Kowalski. All rights reserved.
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
@@ -21,32 +24,95 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: PK0walski
+github_username:  bitroniq
 
 # Build settings
 paginate: 4
 paginate_path: "/blog/page:num/"
 
-# Conversion
-markdown:    kramdown
-highlighter: rouge
-lsi:         false
-excerpt_separator: "\n\n"
-incremental: false
+# Default Configuration
+# Jekyll runs with the following configuration options by default. Alternative
+# settings for these options can be explicitly specified in the configuration
+# file or on the command-line.
+# Where things are
+# source:          .
+# destination:     ./_site
+# collections_dir: .
+# plugins_dir:     _plugins
+# layouts_dir:     _layouts
+# data_dir:        _data
+# includes_dir:    _includes
+# collections:
+#   posts:
+#     output:   true
 
+# # Handling Reading
+# safe:                false
+# include:             [".htaccess"]
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:             ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
+# keep_files:          [".git", ".svn"]
+# encoding:            "utf-8"
+# markdown_ext:        "markdown,mkdown,mkdn,mkd,md"
+# strict_front_matter: false
+
+# # Filtering Content
+# show_drafts: null
+# limit_posts: 0
+# future:      false
+# unpublished: false
+
+# # Plugins
+# whitelist: []
+# plugins:   []
 plugins:
   - jekyll-feed
   - jekyll-paginate
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+# # Conversion
+# markdown:    kramdown
+# highlighter: rouge
+# lsi:         false
+# excerpt_separator: "\n\n"
+# incremental: false
+
+# # Serving
+# detach:  false
+# port:    4000
+# host:    127.0.0.1
+# baseurl: "" # does not include hostname
+# show_dir_listing: false
+
+# # Outputting
+# permalink:     date
+# paginate_path: /page:num
+# timezone:      null
+
+# quiet:    false
+# verbose:  false
+# defaults: []
+
+# liquid:
+#   error_mode:       warn
+#   strict_filters:   false
+#   strict_variables: false
+
+# # Markdown Processors
+# rdiscount:
+#   extensions: []
+
+# redcarpet:
+#   extensions: []
+
+# kramdown:
+#   auto_ids:      true
+#   entity_output: as_char
+#   toc_levels:    1..6
+#   smart_quotes:  lsquo,rsquo,ldquo,rdquo
+#   input:         GFM
+#   hard_wrap:     false
+#   footnote_nr:   1
+#   show_warnings: false
