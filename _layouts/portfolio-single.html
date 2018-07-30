@@ -1,134 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="keywords" content="Piotr Kowalski Personal Page Resume CV" />
-<meta name="description" content="Piotr Kowalski - Personal Page - Resume / CV" />
-<meta name="author" content="piotrkowalski.info" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title> Piotr Kowalski - Personal Page - Resume / CV </title>
+---
+layout: default
+---
 
-<!-- Favicon -->
-<link rel="shortcut icon" href="assets/images/favicon.ico" />
-
-<!-- bootstrap -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
-<!-- google font -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,300italic,400italic,600italic,700,700italic,800,800italic' rel='stylesheet' type="text/css" />
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200italic,200,300,300italic,400italic,500,500italic,600,600italic,700italic,900italic,900,800,700,800italic' rel='stylesheet' type="text/css" />
-
-<!-- themify icon -->
-<link href="assets/css/themify-icons.css" rel="stylesheet" type="text/css" />
-
-<!-- font-awesome  -->
-<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-<!--  owl carousel -->
-<link rel='stylesheet' href='assets/css/owl.carousel.css'>
-
-<!-- main style -->
-<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-
-<!-- responsive -->
-<link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
-
-</head>
-
-<body>
-
-<!--=================================
-  loading -->
-
- <div id="loading">
-  <div id="loading-center">
-    <div id="loading-center-absolute">
-      <div class="object" id="object_one"></div>
-      <div class="object" id="object_two"></div>
-      <div class="object" id="object_three"></div>
-      <div class="object" id="object_four"></div>
-  </div>
- </div>
-</div>
-
-<!--=================================
-  loading -->
+{% include portfolio-header.html %}
 
 
-<!--=================================
-  header --> 
- 
- <header class="header">
-  <nav id="menu" class="navbar navbar-default">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html"> <img id="logo_img" src="assets/images/logo.png" alt=""> </a>
-    </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog </a></li>
-          <li><a href="blog-single.html">Blog single</a></li>
-          <li class="active"><a href="portfolio-single.html">Portfolio single</a></li>
-          <li><a href="error-404.html">Error 404</a></li>
-      </ul>
-   </div> 
-</nav>
-</header>
+{% include portfolio-intro.html %}  
 
-<!--=================================
-  header -->
-
-
-<!--=================================
-  intro -->
-  
-  <div class="page-header bg gradient-01">
-      <div class="container-fluid">
-      <div class="row">
-        <div class="top-bar clearfix">
-          <div class="back-home pull-left">
-            <a href="index.html"><span class="ti-angle-left"></span> back to home</a>
-          </div>
-          <ul class="breadcrumb pull-right">
-            <li><a href="index.html"><span class="ti-home"></span> Home</a></li>
-            <li class="active">Portfolio single</li>        
-          </ul>
-        </div>
-        <div class="page-header-title">
-           <h1>Portfolio single page</h1>
-           <span>By Piotr Kowalski </span>
-        </div>
-       </div>
-    </div>
-  </div>
-  
-<!--=================================
-  intro --> 
-
-  
 <!--=================================
   single portfolio --> 
-
   <section class="single-portfolio-post page-section-pt">
   <div class="container-fluid">
      <div class="row">
       <div class="col-lg-7 col-md-7">
            <div class="owl-carousel-1">
               <div class="item">
-                 <img src="assets/images/portfolio/05.jpg" alt="">
+                 <img src="/assets/images/portfolio/05.jpg" alt="">
               </div>
               <div class="item">
-                 <img src="assets/images/portfolio/06.jpg" alt="">
+                 <img src="/assets/images/portfolio/06.jpg" alt="">
               </div>
               <div class="item">
-                 <img src="assets/images/portfolio/07.jpg" alt="">
+                 <img src="/assets/images/portfolio/07.jpg" alt="">
               </div>
            </div>
       </div>
@@ -170,7 +63,7 @@
     <div class="col-ld-12 col-md-12">
       <div class="port-post clearfix">
        <div class="port-post-photo">
-          <img src="assets/images/my-photo.jpg" alt="">
+          <img src="/assets/images/my-photo.jpg" alt="">
         </div> 
         <div class="port-post-info">
           <h3 class="text-blue"><span>Posted by :</span> Piotr Kowalski</h3>
@@ -188,89 +81,8 @@
  <!--=================================-->
   </div>
 </section>
-
 <!--=================================
   single portfolio --> 
 
-  
-<!--=================================
- contact --> 
 
-<section id="contact" class="google-map white-bg page-section-pt">
- <div class="container-fluid">
-  <div id="google-map">
-   <div id="map-canvas" class="wow animated fadeInUp"></div>
- </div>
- <div class="contact">  
-  <h2>Say Hi It’s Free! </h2>
-  <div class="address">
-    <ul>
-      <li><span class="ti-location-pin"></span> <p>24 SL Road, London. UK</p> </li>
-      <li><span class="ti-marker-alt"></span> <p>sammartin@website.com </p></li>
-      <li><span class="ti-mobile"></span> <p>(123)-456-7890 </p></li>
-      <li><span class="ti-printer"></span> <p>(098)-765-4321 </p></li>
-    </ul>
-  </div>
-  <div class="social">
-   <h4>I'm also on Social Networks</h4>
-   <p>Follow me on social networks to get the latest news, blog, updates and much more.</p>
-   <ul>
-       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-         <li><a href="#"><i class="fa fa-dribbble"></i> </a></li>
-         <li><a href="#"><i class="fa fa-vimeo"></i> </a></li>
-         <li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
-         <li><a href="#"><i class="fa fa-behance"></i> </a></li>
-         <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-    </ul>
-  </div>
-  <div class="button-large"><a href="#">Download my CV</a></div>
- </div>
- <div class="contact-form">
-   <div id="contact-wrapper">
-    <div class="contact-content">
-     <div id="formmessage">Success/Error Message Goes Here</div>
-       <form class="form-horizontal" id="contactform" method="post" action="php/contact-form.php">
-          <div class="contact-form">
-            <h4>Drop me a line</h4>
-            <p>Use this form to tell me about your project goals and needs. I will be in touch within 24 hours.</p>
-               <input id="name" type="text" placeholder="Name*"  name="name">
-               <input type="email" placeholder="Email*" name="email">
-               <input type="text" placeholder="Phone*" name="phone">
-               <textarea class="input-message" placeholder="Comment*" rows="7" name="message"></textarea>
-             <input type="hidden" name="action" value="sendEmail"/>
-            <button id="submit" name="submit" type="submit" value="Send" class="button-small"> Say Hello! </button>
-          </div> 
-        </form>
-        <div id="ajaxloader" style="display:none"><img class="center-block" src="assets/images/ajax-loader-white.gif" alt=""></div>
-   </div>
-   <a href="#" class="contact-toggle"><span class="ti-comments"></span></a>
-  </div>
- </div>
- </div>
-</section>
-
-<!--=================================
- contact --> 
-
-<!--=================================
- javascript -->
-
-<!-- jquery -->
-<script src="assets/js/jquery.min.js"></script>
-
-<!-- modernizr -->
-<script src="assets/js/modernizr.min.js"></script>
-
-<!-- Plugins -->
-<script src="assets/js/plugins.js"></script>
-
-<!-- map script -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjVoaCW3PAn52C7WPpJ7NBBqU1_TUfnSI"></script>
-<script src="assets/js/map-scripts.js"></script>
-
-<!-- custom -->
-<script src="assets/js/custom.js"></script>
-
-</body>
-</html> 
+{% include common-contact.html %}
