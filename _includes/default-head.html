@@ -6,6 +6,8 @@
 
 {% include default-head-seo.html %}
 
+<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <!-- Theme color Chrome, Firefox OS and Opera -->
 <meta name="theme-color" content="#2f3742">
