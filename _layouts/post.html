@@ -17,7 +17,7 @@ blog -->
           <div class="item"> <img src="https://via.placeholder.com/1920x600/bbb" alt=""> </div>
           <div class="item"> <img src="https://via.placeholder.com/1920x600/ccc" alt=""> </div>
         </div>
-        <div class="content">
+        <div class="content" id="content">
           {{ content }}
           <hr>
           </div>
@@ -94,14 +94,14 @@ blog -->
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="slidebar">
-            <div class="author">
+            <div class="author" id="author">
               <div class="author-details">
                 <div class="author-avtar">
                   <img class="img-responsive" src="/assets/images/my-photo.jpg" alt="">
                 </div>
                 <div class="author-name">
                   <h4>Piotr Kowalski</h4>
-                  <b>UX/UI DESIGNER <br /> WEB DEVELOPER</b>
+                  <b>DEVOPS / ADMIN <br /> WEB DEVELOPER</b>
                 </div>
               </div>
               <div class="author-content">
@@ -112,10 +112,21 @@ blog -->
             <div class="slidebar-share">
               <h4>share post : </h4>
               <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+                <li>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"  onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook">
+                    <i class="fa fa-facebook"></i>
+                  </a> 
+                </li>
+                <li>
+                  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter">
+                    <i class="fa fa-twitter"></i>
+                  </a> 
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                  </a> 
+                </li>
               </ul>
             </div>
             <div class="slidebar-link">
