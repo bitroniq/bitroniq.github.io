@@ -504,7 +504,7 @@ textarea:focus { background: transparent; box-shadow: 0 0 17px 0 #ebebeb; outlin
 /*************************
        blog page
 *************************/
-.bg { background: url(https://via.placeholder.com/1920x800.jpg); background-attachment: fixed; background-clip: initial; background-color: rgba(0, 0, 0, 0); background-origin: initial; background-position: center center; background-repeat: no-repeat; background-size: cover !important; position: relative; z-index: 0; }
+.bg { background: url(/assets/images/bg_blog_1920x800_laptop.jpg); background-attachment: fixed; background-clip: initial; background-color: rgba(0, 0, 0, 0); background-origin: initial; background-position: center center; background-repeat: no-repeat; background-size: cover !important; position: relative; z-index: 0; }
 .page-header { padding: 170px 10px 50px; margin: 0px; width: 100%; height: 490px; position: relative; }
 .gradient-01:before { background: rgba(0, 0, 0, 0.8); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #131b51), color-stop(100%, #e8d4e6)); background: -webkit-linear-gradient(-315deg, #131b51 0%, #e8d4e6 100%); background: -webkit-linear-gradient(45deg, #131b51 0%, #e8d4e6 100%); background: linear-gradient(45deg, #131b51 0%, #e8d4e6 100%);  opacity: 0.6; content:""; height:100%; left:0; position:absolute; top:0; width:100%; z-index: 0; }
 .page-header.bg.gradient-01:before { z-index: -1; }
