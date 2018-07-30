@@ -1747,9 +1747,6 @@ a.reversefootnote:hover{
     text-transform:uppercase
 }
 .page__meta,.comment__date{
-    margin-top:2em;
-    color:#898c8f;
-    font-family:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
     font-size:.75em
 }
 .page__meta p,.comment__date p{
@@ -1831,4 +1828,15 @@ a.reversefootnote:hover{
     color:inherit;
     text-decoration:none;
     border-bottom:1px solid #f2f3f3
+}
+
+.archive__item-title {
+    margin-top: 0.25em;
+    font-style:normal;
+    text-decoration:underline
+}
+.archive__item-excerpt {
+    margin-top: 0;
+    margin-bottom: 2em;
+    font-style:normal;
 }
