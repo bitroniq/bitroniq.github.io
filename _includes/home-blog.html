@@ -29,9 +29,9 @@ home-blog.html -->
             </div>
             <div class="blog-info">
               <div class="blog-meta">
-                <p><span class="ti-comment-alt"></span> <a href="#">4</a></p>
                 <p><span class="ti-user"></span> <a href="#">Admin </a></p>
                 <p><span class="ti-folder"></span> <a href="#">Development</a></p>
+                {% if post.read_time %}<p><span class="ti-alarm-clock"></span>{% include read-time.html %}</p>{% endif %}
               </div>
               <div class="blog-content">
                 <a href="{{ post.url }}">{{ post.title }}</a>
@@ -42,9 +42,21 @@ home-blog.html -->
                   </div>
                   <div class="social pull-right">
                     <ul>
-                      <li><a href="#"><i class="fa fa-facebook"></i> </a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+                      <li>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"  onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook">
+                          <i class="fa fa-facebook"></i>
+                        </a> 
+                      </li>
+                      <li>
+                        <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter">
+                          <i class="fa fa-twitter"></i>
+                        </a> 
+                      </li>
+                      <li>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn">
+                          <i class="fa fa-linkedin"></i>
+                        </a> 
+                      </li>
                     </ul>
                   </div>
                 </div>
