@@ -205,14 +205,14 @@ author:
   email            :
   uri              : "https://www.piotrkowalski.info"
   home             : # null (default), "absolute or relative url to link to author home"
-  bitbucket        : "bitroniq"
+  bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         : "piotrkowalskiprv"
   foursquare       :
   github           : "bitroniq"
-  gitlab           : "piotr.kowalski"
+  gitlab           :
   google_plus      :
   keybase          :
   instagram        : "piotr.kowalski.prv"
