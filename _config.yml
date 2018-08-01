@@ -236,6 +236,7 @@ author:
 include:
   - .htaccess
   - _pages
+  - blog
 # exclude - simply Exclude directories and/or files from the conversion.
 # These exclusions are relative to the site's source directory and cannot
 # be outside the source directory.
@@ -288,11 +289,11 @@ sass:
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 # Outputting
-permalink: /blog/:categories/:title/
+permalink: "/blog/:categories/:title/"
 paginate: 4 # amount of posts to show
-paginate_path: /blog/page:num/
+paginate_path: "/blog/page:num/"
 # timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone: Europe/Warsaw
+timezone: "Europe/Warsaw"
 
 # Plugins (previously gems:)
 plugins:

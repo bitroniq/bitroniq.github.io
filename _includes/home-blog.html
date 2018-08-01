@@ -16,7 +16,7 @@ home-blog.html -->
       </div>
     </div>
     <div class="row">
-      {% for post in paginator.posts %}
+      {% for post in site.posts limit:4 %}
         <!-- ============================
         autgenerated blog post -->
         <div class="col-lg-3 col-md-6 col-sm-6">
