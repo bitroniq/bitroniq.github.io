@@ -5,14 +5,15 @@ title: "Blog Dashboard"
 
 <hr>
 <!-- This loops through the paginated posts -->
-<div class="row">
+
 
     {% for post in paginator.posts %}
+    
+    {% assign mod4 = forloop.index | modulo: 4 %}
 
+    {% if mod4 == 0 %}<div class="row">{% endif %}
 
-      {% cycle '<div class="col-lg-3 col-md-6 col-sm-6">', '' %}
-
-
+     <div class="col-lg-3 col-md-6 col-sm-6">
       <!-- ============================
       autgenerated blog post -->
       <div class="blog-block">
@@ -60,9 +61,9 @@ title: "Blog Dashboard"
     </div>
     <!-- ============================
     end blog post -->
-  {% cycle '', '</div>' %}
+  </div>
+  {% if mod4 == 0 %}</div>{% endif %}
   {% endfor %}
-</div>
 
 
 
