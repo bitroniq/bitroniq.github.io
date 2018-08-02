@@ -19,56 +19,7 @@ home-blog.html -->
       {% for post in site.posts limit:4 %}
         <!-- ============================
         autgenerated blog post -->
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="blog-block">
-            <div class="blog-image">
-              <img class="img-responsive" src="/assets/images/blog/01.jpg" alt="">
-              <div class="blog-date">
-                <span><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
-              </div>
-            </div>
-            <div class="blog-info">
-              <div class="blog-meta">
-                <p><span class="ti-user"></span> <a href="#about">{{ site.author.name }}</a></p>
-                <p><span class="ti-folder"></span> <a href="#">Development</a></p>
-                {% if post.read_time %}<p><span class="ti-alarm-clock"></span>{% include read-time.html %}</p>{% endif %}
-              </div>
-              <div class="blog-content">
-                {% if post.id %}
-                  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-                {% else %}
-                  {% assign title = post.title %}
-                {% endif %}
-                <a href="{{ post.url }}">{{ title }}</a>
-                {% if post.excerpt %}<p>{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
-                <div class="blog-bottom clearfix">
-                  <div class="button-small">
-                    <a href="{{ post.url }}">Read More...</a>
-                  </div>
-                  <div class="social pull-right">
-                    <ul>
-                      <li>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"  onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook">
-                          <i class="fa fa-facebook"></i>
-                        </a> 
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter">
-                          <i class="fa fa-twitter"></i>
-                        </a> 
-                      </li>
-                      <li>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn">
-                          <i class="fa fa-linkedin"></i>
-                        </a> 
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% include post-excerpt.html %}
         <!-- ============================
         end blog post -->
       {% endfor %}
