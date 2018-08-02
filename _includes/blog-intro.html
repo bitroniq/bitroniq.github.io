@@ -1,0 +1,25 @@
+<!--=================================
+intro -->
+
+<div class="page-header bg gradient-01">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="top-bar clearfix">
+        <div class="back-home pull-left">
+          <a href="{{ baseurl }}/"><span class="ti-angle-left"></span> back to home</a>
+        </div>
+        <ul class="breadcrumb pull-right">
+          <li><a href="{{ baseurl }}/"><span class="ti-home"></span> Home</a></li>
+          <li class="active">Blog</li>
+        </ul>
+      </div>
+      <div class="page-header-title">
+        <h1>{{ page.title }}</h1>
+        <span>{{ site.title }}{% if paginator.page %} | {{ paginator.page }} of {{ paginator.total_pages }} {% endif %}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--=================================
+intro -->

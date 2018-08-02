@@ -1,73 +1,17 @@
 ---
 layout: default
 ---
-<!--=================================
-header -->
-
-<header class="header">
-  <nav id="menu" class="navbar navbar-default">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ baseurl }}/"> <img id="logo_img" src="{{ baseurl }}/assets/images/logo.png" alt="Home"> </a>
-    </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ baseurl }}/">Home</a></li>
-        <li class="active"><a href="#blog">Blog </a></li>
-        <li><a href="{{ baseurl }}/archive/">Archive</a></li>
-        <li><a href="{{ baseurl }}/categories/">Categories</a></li>
-        <li><a href="#contact" class="page-scroll">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-<!--=================================
-header -->
-<!--=================================
-intro -->
-
-<div class="page-header bg gradient-01">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="top-bar clearfix">
-        <div class="back-home pull-left">
-          <a href="{{ baseurl }}/"><span class="ti-angle-left"></span> back to home</a>
-        </div>
-        <ul class="breadcrumb pull-right">
-          <li><a href="{{ baseurl }}/"><span class="ti-home"></span> Home</a></li>
-          <li class="active">Blog</li>
-        </ul>
-      </div>
-      <div class="page-header-title">
-        <h1>{{ page.title }}</h1>
-        <span>{{ site.title }}{% if paginator.page %} | {{ paginator.page }} of {{ paginator.total_pages }} {% endif %}</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--=================================
-intro -->
-
+{% include blog-header.html %}
+{% include blog-intro.html %}
 <!--=================================
 blog -->
 <section class="blog blog-page white-bg page-section" id="blog">
   <div class="container-fluid">
 
-
     {{ content }}
-
-
     
   </div>
 </section>
-
 <!--=================================
 blog -->
-
 {% include common-contact.html %}
