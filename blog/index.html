@@ -6,16 +6,11 @@ title: "Blog Dashboard"
 <hr>
 <!-- This loops through the paginated posts -->
 
-
-    {% for post in paginator.posts %}
-    
+ {% for post in paginator.posts %}
     {% assign mod4 = forloop.index | modulo: 4 %}
-
-    {% if mod4 == 0 %}<div class="row">{% endif %}
-
+    {% if mod4 == 1 %}<div class="row">{% endif %}
+  
      <div class="col-lg-3 col-md-6 col-sm-6">
-      <!-- ============================
-      autgenerated blog post -->
       <div class="blog-block">
         <div class="blog-image">
           <img class="img-responsive" src="/assets/images/blog/01.jpg" alt="">
@@ -59,15 +54,11 @@ title: "Blog Dashboard"
         </div>
       </div>
     </div>
-    <!-- ============================
-    end blog post -->
   </div>
+
   {% if mod4 == 0 %}</div>{% endif %}
+
   {% endfor %}
-
-
-
-
 
 
 
