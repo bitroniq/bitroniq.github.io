@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "Blog Dashboard"
+title: "Blog Page"
 ---
 
 <hr>
@@ -25,8 +25,13 @@ title: "Blog Dashboard"
             {% if post.read_time %}<p><span class="ti-alarm-clock"></span>{% include read-time.html %}</p>{% endif %}
           </div>
           <div class="blog-content">
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <p>{{ post.excerpt }}</p>
+                {% if post.id %}
+                  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+                {% else %}
+                  {% assign title = post.title %}
+                {% endif %}
+                <a href="{{ post.url }}">{{ title }}</a>
+            {% if post.excerpt %}<p>{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
             <div class="blog-bottom clearfix">
               <div class="button-small">
                 <a href="{{ post.url }}">Read More..</a>
