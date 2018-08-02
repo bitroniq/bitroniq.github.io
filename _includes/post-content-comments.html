@@ -1,0 +1,260 @@
+<div class="page__comments">
+  {% capture comments_label %}{{ site.data.ui-text[site.locale].comments_label | default: "Comments" }}{% endcapture %}
+  {% case site.comments.provider %}
+    {% when "discourse" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section id="discourse-comments"></section>
+    {% when "disqus" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = {{ site.url }}  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = {{ site.name }} // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://piotrkowalski.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    {% when "facebook" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section class="fb-comments" data-href="{{ page.url | absolute_url }}" data-mobile="true" data-num-posts="{{ site.comments.facebook.num_posts | default: 5 }}" data-width="100%" data-colorscheme="{{ site.comments.facebook.colorscheme | default: 'light' }}"></section>
+    {% when "google-plus" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section id="g-comments" class="g-comments">Loading Google+ Comments ...</section>
+      <script>
+        function initComment() {
+          gapi.comments.render("g-comments", {
+            href: "{{ page.url | absolute_url }}",
+            width: "624",
+            first_party_property: "BLOGGER",
+            view_type: "FILTERED_POSTMOD"
+          })
+        }
+      </script>
+      <script async type="text/javascript" src="https://apis.google.com/js/plusone.js" onload="initComment()" />
+      <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>-->
+    {% when "staticman_v2" %}
+      <section id="static-comments">
+        {% if site.repository and site.staticman.branch %}
+          <!-- Start static comments -->
+          <div class="js-comments">
+            {% if site.data.comments[page.slug] %}
+              <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_title | default: "Comments" }}</h4>
+              {% assign comments = site.data.comments[page.slug] | sort %}
+
+              {% for comment in comments %}
+                {% assign email = comment[1].email %}
+                {% assign name = comment[1].name %}
+                {% assign url = comment[1].url %}
+                {% assign date = comment[1].date %}
+                {% assign message = comment[1].message %}
+                {% include comment.html index=forloop.index email=email name=name url=url date=date message=message %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
+            <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://api.staticman.net/v2/entry/{{ site.repository }}/{{ site.staticman.branch }}/comments">
+              <div class="form__spinner">
+                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">{{ site.data.ui-text[site.locale].loading_label | default: "Loading..." }}</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }} <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">{{ site.data.ui-text[site.locale].comment_form_md_info | default: "Markdown is supported." }}</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }} <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">{{ site.data.ui-text[site.locale].comment_form_email_label | default: "Email address" }} <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">{{ site.data.ui-text[site.locale].comment_form_website_label | default: "Website (optional)" }}</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+                {% if site.reCaptcha.siteKey %}<input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">{% endif %}
+                {% if site.reCaptcha.secret %}<input type="hidden" name="options[reCaptcha][secret]" value="{{ site.reCaptcha.secret }}">{% endif %}
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              {% if site.reCaptcha.siteKey %}
+                <div class="form-group">
+                  <div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>
+                </div>
+              {% endif %}
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+          {% if site.reCaptcha.siteKey %}<script async src="https://www.google.com/recaptcha/api.js"></script>{% endif %}
+        {% endif %}
+      </section>
+    {% when "staticman" %}
+      <section id="static-comments">
+        {% if site.repository and site.staticman.branch %}
+          <!-- Start static comments -->
+          <div class="js-comments">
+            {% if site.data.comments[page.slug] %}
+              <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_title | default: "Comments" }}</h4>
+              {% assign comments = site.data.comments[page.slug] | sort %}
+
+              {% for comment in comments %}
+                {% assign email = comment[1].email %}
+                {% assign name = comment[1].name %}
+                {% assign url = comment[1].url %}
+                {% assign date = comment[1].date %}
+                {% assign message = comment[1].message %}
+                {% include comment.html index=forloop.index email=email name=name url=url date=date message=message %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
+            <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://api.staticman.net/v1/entry/{{ site.repository }}/{{ site.staticman.branch }}">
+              <div class="form__spinner">
+                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">{{ site.data.ui-text[site.locale].loading_label | default: "Loading..." }}</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }} <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">{{ site.data.ui-text[site.locale].comment_form_md_info | default: "Markdown is supported." }}</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }} <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">{{ site.data.ui-text[site.locale].comment_form_email_label | default: "Email address" }} <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">{{ site.data.ui-text[site.locale].comment_form_website_label | default: "Website (optional)" }}</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+        {% endif %}
+      </section>
+    {% when "custom" %}
+      <section id="custom-comments">
+          <!--=================================
+            blog-comments -->
+          <div class="blog-comments">
+            <div class="comments-1">
+              <div class="comments-photo">
+                <img class="img-responsive" src="/assets/images/testimonials/01.jpg" alt="">
+              </div>
+              <div class="comments-info">
+                <h4 class="text-blue"> Michael Bean <span>Sep 15, 2016</span></h4>
+                <div class="port-post-social pull-right">
+                  <a href="#">Reply</a>
+                </div>
+                <p>Imagine you are 10 years into the future but this time it’s different. Why? Because starting today you actually begin making changes in your life. Specific intentional changes are not easy. They are intentional because these changes are changes that you are choosing and they are the changes that will cause you to live the life you want to live and dream.</p>
+              </div>
+            </div>
+            <div class="comments-1 comments-2">
+              <div class="comments-photo">
+                <img class="img-responsive" src="/assets/images/testimonials/05.jpg" alt="">
+              </div>
+              <div class="comments-info">
+                <h4 class="text-blue"> Paul Flavius <span>Oct 21, 2016</span></h4>
+                <div class="port-post-social pull-right">
+                  <a href="#">Reply</a>
+                </div>
+                <p> They often mean leaving the perception of security in order to discover your personal freedom. These are the changes that will bring happiness and satisfaction into your life. Just go there now. 10 years out… having made a decade of changes.</p>
+              </div>
+            </div>
+            <div class="comments-1 comments-2">
+              <div class="comments-photo">
+                <img class="img-responsive" src="/assets/images/testimonials/03.jpg" alt="">
+              </div>
+              <div class="comments-info">
+                <h4 class="text-blue"> Michael Bean <span>Oct 20, 2016</span></h4>
+                <div class="port-post-social pull-right">
+                  <a href="#">Reply</a>
+                </div>
+                <p>Imagine living the life you want to live. How does that feel inside? Do you feel that you have lived life? See the people of your life and how they feel about you and how they react to you. </p>
+              </div>
+            </div>
+            <div class="comments-1">
+              <div class="comments-photo">
+                <img class="img-responsive" src="/assets/images/testimonials/04.jpg" alt="">
+              </div>
+              <div class="comments-info">
+                <h4 class="text-blue"> Joana Williams <span>Oct 02, 2016</span></h4>
+                <div class="port-post-social pull-right">
+                  <a href="#">Reply</a>
+                </div>
+                <p>This is the path of a different choice, a different decision. You have the freedom to be how you want to be. Absorb all you need from this moment in your future and the positive things that you can learn consciously and unconsciously and then drift and float back to the place where the path splits. Step Six: Now that you know and have experienced the two contrasting futures. Now that you know what your future holds as a result of what you do this very day.</p>
+              </div>
+            </div>
+          </div>
+          <!--=================================
+            blog-comments -->
+          <div class="contact-form clearfix">
+            <h3>Leave a Reply </h3>
+            <div class="section-field">
+              <input type="text" name="name" placeholder="Name*" >
+            </div>
+            <div class="section-field">
+              <input type="email" name="email" placeholder="Email*" id="email">
+            </div>
+            <div class="section-field">
+              <input type="text" name="web" placeholder="Web*" class="web" id="web">
+            </div>
+            <div class="section-field textarea">
+              <textarea name="message" rows="7" placeholder="Comment*" class="input-message" id="message"></textarea>
+            </div>
+            <a href="#">Post comment </a>
+          </div>
+      </section>
+  {% endcase %}
+</div>

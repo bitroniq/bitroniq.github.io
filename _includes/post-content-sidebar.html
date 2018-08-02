@@ -1,0 +1,100 @@
+        <!--=================================
+        blog-sidebar -->
+        <div class="col-lg-3 col-md-3">
+          <div class="slidebar">
+            <div class="author" id="author">
+              <div class="author-details">
+                <div class="author-avtar">
+                  <img class="img-responsive" src="/assets/images/my-photo.jpg" alt="">
+                </div>
+                <div class="author-name">
+                  <h4>Piotr Kowalski</h4>
+                  <b>DEVOPS / ADMIN <br /> WEB DEVELOPER</b>
+                </div>
+              </div>
+              <div class="author-content">
+                <p> Hello, i am UI/UX Designer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
+              </div>
+            </div>
+            <div class="slidebar-share">
+              <h4>share post : </h4>
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"  onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="slidebar-link">
+              <h3>Categories</h3>
+              <ul>
+                <li><a href="#">Architecture</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Creative</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Education</a></li>
+              </ul>
+            </div>
+            <div class="slidebar-post">
+              <h3>Popular Posts</h3>
+              <div class="post">
+                <a href="#">Hypnotherapy For Motivation Getting The Drive Back</a>
+                <span>Monday / jan 10, 2016 </span>
+              </div>
+              <div class="post">
+                <a href="#">When You Are Down And Out How Do You Get Up And Go Forward</a>
+                <span>Monday / Feb 10, 2016 </span>
+              </div>
+              <div class="post">
+                <a href="#">How I Lost The Secret Of Dazzling Success For 20 Years</a>
+                <span>Monday / Mar 10, 2016 </span>
+              </div>
+              <div class="post">
+                <a href="#">Hypnotherapy For Motivation Getting The Drive Back</a>
+                <span>Monday / Apr 10, 2016 </span>
+              </div>
+            </div>
+            <div class="slidebar-link">
+              <h3>ARchive</h3>
+              <ul>
+                <li><a href="#">January 2016 </a></li>
+                <li><a href="#">February 2016 </a></li>
+                <li><a href="#">March 2016 </a></li>
+                <li><a href="#">April 2016 </a></li>
+                <li><a href="#">May 2016 </a></li>
+                <li><a href="#">June 2016 </a></li>
+              </ul>
+            </div>
+            <div class="slidebar-tag">
+              <h3>Tag Cloud</h3>
+              <ul>
+                <li><a href="#">advertisement </a></li>
+                <li><a href="#">nature</a></li>
+                <li><a href="#">Wordpress</a></li>
+                <li><a href="#">Forest </a></li>
+                <li><a href="#">Website </a></li>
+                <li><a href="#">Green</a></li>
+                <li><a href="#">blue </a></li>
+                <li><a href="#">love</a></li>
+                <li><a href="#">creative</a></li>
+                <li><a href="#">photography</a></li>
+              </ul>
+            </div>
+            {% include post-content-widget.html %}
+          </div>
+        </div>
+        <!--=================================
+        blog-sidebar -->
