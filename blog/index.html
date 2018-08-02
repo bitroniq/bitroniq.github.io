@@ -20,7 +20,7 @@ title: "Blog Page"
         </div>
         <div class="blog-info">
           <div class="blog-meta">
-            <p><span class="ti-user"></span> <a href="#">Admin </a></p>
+            <p><span class="ti-user"></span> <a href="{{ baseurl }}/#about">{{ site.author.name }}</a></p>
             <p><span class="ti-folder"></span> <a href="#">Development</a></p>
             {% if post.read_time %}<p><span class="ti-alarm-clock"></span>{% include read-time.html %}</p>{% endif %}
           </div>
