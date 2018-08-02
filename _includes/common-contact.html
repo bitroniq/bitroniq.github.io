@@ -1,3 +1,6 @@
+{% assign author = page.author | default: page.authors[0] | default: site.author %}
+{% assign author = site.data.authors[author] | default: author %}
+
 <!--=================================
  common-contact.html -->
 <section id="contact" class="google-map white-bg page-section-pt">
