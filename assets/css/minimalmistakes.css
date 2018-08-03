@@ -368,9 +368,6 @@ a:hover,a:active{
     color:#3e8296;
     outline:0
 }
-a:visited{
-    color:#7dc2d6
-}
 tt,code,kbd,samp,pre{
     font-family:Monaco,Consolas,"Lucida Console",monospace
 }
@@ -1182,11 +1179,11 @@ nav li ul,nav li ol{
     float:left;
     width:50%;
     font-family:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
-    font-size:1em;
+    font-size:1.2em;
     font-weight:bold;
     text-align:center;
     text-decoration:none;
-    color:#898c8f;
+    color:#337ab7;
     border:1px solid #b6b6b6;
     border-radius:4px
 }
