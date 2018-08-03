@@ -19,7 +19,7 @@ post-intro.html -->
         {% else %}
         { % assign title = page.title %}
         {% endif %}
-        <h1>{{ title }}</h1>
+        <h1 id="page-title">{{ title }}</h1>
         <div class="blog-meta">
           <p><span class="ti-user"></span> <a href="#author">{{ site.author.name }}</a></p>
           <p><span class="ti-folder"></span> <a href="#">Web development</a></p>
