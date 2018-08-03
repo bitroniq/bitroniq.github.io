@@ -1840,3 +1840,12 @@ a.reversefootnote:hover{
     margin-bottom: 2em;
     font-style:normal;
 }
+
+.back-to-top{
+    display:block;
+    clear:both;
+    color:#2f3742;
+    text-transform:uppercase;
+    text-align:right;
+    text-decoration:none
+}
