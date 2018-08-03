@@ -10,7 +10,7 @@
           <div class="blog-meta">
             <p><span class="ti-user"></span> <a href="{{ baseurl }}/#about">{{ site.author.name }}</a></p>
             <p><span class="ti-folder"></span> <a href="#">Development</a></p>
-            <p><span class="ti-comment"></span> <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a></p>
+            <p><span class="ti-comment"></span> <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}">Comments</a></p>
             {% if post.read_time %}<p><span class="ti-alarm-clock"></span>{% include read-time.html %}</p>{% endif %}
           </div>
           <div class="blog-content">
