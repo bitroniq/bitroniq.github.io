@@ -1846,3 +1846,20 @@ a.reversefootnote:hover{
     text-align:right;
     text-decoration:none
 }
+
+.page__comments {
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  clear: both;
+}
+
+.page__comments-title {
+  margin-top: 2rem;
+  margin-bottom: 10px;
+  padding-top: 2rem;
+  font-size: $type-size-6;
+  border-top: 1px solid #f2f3f3;
+  text-transform: uppercase;
+}
