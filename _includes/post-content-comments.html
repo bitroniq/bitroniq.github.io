@@ -7,8 +7,10 @@
     {% when "disqus" %}
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <div id="disqus_thread"></div>
+      
       <script>
         /**
+        *  Oryginal disqus script 2018:
         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
@@ -25,6 +27,53 @@
         })();
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      <!-- ****************
+           Lazy load script for disqus
+           
+      <div class="comments"></div>
+      <script>
+        var comments = document.getElementsByClassName('comments')[0],
+            disqusLoaded=false;
+
+        function loadDisqus() {
+            var disqus_shortname = 'piotrkowalski';
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            disqusLoaded = true;
+        }
+        //Get the offset of an object
+        function findTop(obj) {
+            var curtop = 0;
+            if (obj.offsetParent) {
+                do {
+                    curtop += obj.offsetTop;
+                } while (obj = obj.offsetParent);
+                return curtop;
+            }
+        }
+
+        if(window.location.hash.indexOf('#comments') > 0)
+            loadDisqus();
+
+        if(comments) {
+            var commentsOffset = findTop(comments);
+
+            window.onscroll = function() {
+              if(!disqusLoaded && window.pageYOffset > commentsOffset - 1500) {
+                    console.log('load comments, NOW!!');
+                    loadDisqus();
+                }
+            }
+        }
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      -->
+
     {% when "facebook" %}
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section class="fb-comments" data-href="{{ page.url | absolute_url }}" data-mobile="true" data-num-posts="{{ site.comments.facebook.num_posts | default: 5 }}" data-width="100%" data-colorscheme="{{ site.comments.facebook.colorscheme | default: 'light' }}"></section>
