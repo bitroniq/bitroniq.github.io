@@ -98,21 +98,6 @@ NOTE:
         offset: 80
     })
    
-/*************************
-        NiceScroll
-*************************/ 
-  $("html").niceScroll({
-    scrollspeed: false,
-    mousescrollstep: 38,
-    cursorwidth: 7,
-    cursorborder: 0,
-    cursorcolor: '#2f3742',
-    autohidemode: true,
-    zindex: 999999999,
-    horizrailenabled: false,
-    cursorborderradius: 0 
-  });
-
 
 /*************************
      PHP contact form 
