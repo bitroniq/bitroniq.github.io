@@ -3,6 +3,7 @@ layout: post
 title: "Site Reliability Management with Trello"
 excerpt: "Get inspired with an example Trello Board for Site Reliability Engineers"
 header:
+  image: "assets/images/blog/trello-board-dev-sitereliability.png"
   teaser: "assets/images/blog/trello-board-dev-sitereliability.png"
 carousel:
   item1: "assets/images/blog/trello-board-dev-sitereliability-item1.png"
