@@ -6,3 +6,4 @@ _site
 *.sublime-workspace
 .bundle
 Gemfile.lock
+jekyll*.sh
