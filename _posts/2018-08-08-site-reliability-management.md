@@ -13,6 +13,8 @@ tags:
   - devops
   - sre
   - management
+categories:
+  - DevOps
 ---
 
 As a big fan of Trello and their approach for making life easier with their Boards, recently I discovered that they have a lot of [inspiring Boards](https://trello.com/inspiringboards).
