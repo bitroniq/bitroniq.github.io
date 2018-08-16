@@ -9,7 +9,9 @@
         <div class="blog-info">
           <div class="blog-meta">
             <p><span class="ti-user"></span> <a href="{{ site.baseurl }}/#about">{{ site.author.name }}</a></p>
-            <p><span class="ti-folder"></span> <a href="#">Development</a></p>
+            {% if site.category_archive.type and post.categories[0] %}
+              {% include post-excerpt-category.html %}
+            {% endif %}
             <p><span class="ti-comment"></span> <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}" class="page-scroll">Comments</a></p>
             {% if post.read_time %}<p><span class="ti-alarm-clock"></span>{% include read-time.html %}</p>{% endif %}
           </div>
