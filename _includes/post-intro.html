@@ -22,22 +22,8 @@ post-intro.html -->
         <h1 id="page-title">{{ title }}</h1>
         <div class="blog-meta">
           <p><span class="ti-user"></span> <a href="#author">{{ site.author.name }}</a></p>
-          {% if site.category_archive.path %}
-            {% comment %}
-              <!-- Sort alphabetically regardless of case e.g. a B c d E -->
-              <!-- modified from http://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/ -->
-            {% endcomment %}
-            {% capture page_categories %}{% for category in page.categories %}{{ category | downcase }}#{{ category }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-            {% assign category_hashes = page_categories | split: ',' | sort %}
-              <p>
-                <span class="ti-folder"></span> 
-              {% for hash in category_hashes %}
-                {% assign keyValue = hash | split: '#' %}
-                {% capture category_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
-                <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
-              {% endfor %}
-              </p>
-              </span>
+          {% if site.category_archive.type and page.categories[0] %}
+            {% include post-intro-category.html %}
           {% endif %}
           <p><span class="ti-comment"></span> <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}" class="page-scroll">Comments</a></p>
           <p><span class="ti-alarm-clock"></span><a href="#content" class="page-scroll">{% include read-time.html %}</a></p>
