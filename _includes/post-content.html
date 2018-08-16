@@ -19,15 +19,25 @@ post -->
           </div>
           <div class="content" id="content">
             {{ content }}
-            <hr>
           </div>
+          <hr>
+          <footer class="page__meta">
+            {% if site.data.ui-text[site.locale].meta_label %}
+              <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+            {% endif %}
+            {% include post-taxonomy.html %}
+            {% if page.last_modified_at %}
+              <p class="page__date"><strong><i class="fa fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: "%B %d, %Y" }}</time></p>
+            {% elsif page.date %}
+              <p class="page__date"><strong><i class="fa fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
+            {% endif %}
+          </footer>
+          <hr>
           {% include post_pagination.html %}
 
           {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
             {% include post-content-comments.html %}
           {% endif %}
-          
-
 
         </div>
 
