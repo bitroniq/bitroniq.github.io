@@ -1,4 +1,4 @@
-# [My Personal Page](https://www.piotrkowalski.info/)
+# [Piotr Kowalski - Personal Page and Blog](https://www.piotrkowalski.info/)
 * [bitroniq.github.io](http://bitroniq.github.io)
 * [www.piotrkowalski.info](http://www.piotrkowalski.info/)
 
