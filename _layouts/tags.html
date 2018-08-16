@@ -17,7 +17,7 @@ layout: archive
       {% if tag[1].size == i %}
         <li>
           <a href="#{{ tag[0] | slugify }}">
-            <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+            <strong><p class="fa fa-tags"></p> {{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
           </a>
         </li>
       {% endif %}
@@ -29,7 +29,7 @@ layout: archive
   {% for tag in site.tags %}
     {% if tag[1].size == i %}
       <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
-        <h2 class="archive__subtitle">{{ tag[0] }}</h2>
+        <h2 class="archive__subtitle"><p class="fa fa-tags"></p> {{ tag[0] }}</h2>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
           {% for post in tag.last %}
             {% include archive-single.html type=page.entries_layout %}
