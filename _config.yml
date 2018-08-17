@@ -193,6 +193,15 @@ analytics:
 # Site Author
 author:
   name             : "Piotr Kowalski"
+  about            : |
+                     Hello, I'm an IT professional with over **15 years** of experience in providing solutions,
+                     architecture and projects in various verticals. I've been working with passion in a variety
+                     of technologies including Internet and **Web Technologies**, **Automation**, **Administration**, **Software
+                     Development Operations**, **Enterprise Solutions**, **Clusters**, **Testing and Unix/Linux
+                     Administration**.  
+                     Professionally I have done work for a variety of major organizations including
+                     LG, SIEMENS, Sagemcom, Gigaset, Affinegy, KPN, CAT Thailand, France Telecom,
+                     Telkom South Africa, Orange Mauritius, VOCUS NZ, TwinLakes and GVTC.
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an IT guy with lots of passion and ideas for creating new projects."
   location         : "Poland"
