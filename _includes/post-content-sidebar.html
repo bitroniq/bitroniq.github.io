@@ -52,7 +52,7 @@
                   {% for category in site.categories %}
                     {% if category[1].size == i %}
                       <li>
-                        <a href="/categories/#{{ category[0] | slugify }}">
+                        <a href="{{ site.baseurl }}/categories/#{{ category[0] | slugify }}">
                           <p class="fa fa-folder-open"></p> {{ category[0] }} <span>[{{ i }}]</span>
                         </a>
                       </li>
@@ -72,7 +72,7 @@
                 {% assign postsInYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
                 {% for year in postsInYear %}
                   <li>
-                    <a href="#{{ year.name }}">
+                    <a href="{{ site.baseurl }}/archive/#{{ year.name }}">
                       <p class="fa fa-calendar"></p> {{ year.name }} <span class="taxonomy__count">[{{ year.items | size }}]</span>
                     </a>
                   </li>
@@ -83,18 +83,29 @@
             </div>
             <div class="slidebar-tag">
               <h3>Tag Cloud</h3>
+              <!--=================================
+                  Generating Tags -->
+              {% assign tags_max = 0 %}
+              {% for tag in site.tags %}
+                {% if tag[1].size > tags_max %}
+                  {% assign tags_max = tag[1].size %}
+                {% endif %}
+              {% endfor %}
               <ul>
-                <li><a href="#">advertisement </a></li>
-                <li><a href="#">nature</a></li>
-                <li><a href="#">Wordpress</a></li>
-                <li><a href="#">Forest </a></li>
-                <li><a href="#">Website </a></li>
-                <li><a href="#">Green</a></li>
-                <li><a href="#">blue </a></li>
-                <li><a href="#">love</a></li>
-                <li><a href="#">creative</a></li>
-                <li><a href="#">photography</a></li>
+                {% for i in (1..tags_max) reversed %}
+                  {% for tag in site.tags %}
+                    {% if tag[1].size == i %}
+                      <li>
+                        <a href="{{ site.baseurl }}/tags/#{{ tag[0] | slugify }}">
+                          <p class="fa fa-tags"></p> {{ tag[0] }} <span> [{{ i }}]</span>
+                        </a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
               </ul>
+              <!--=================================
+                  End Generating Archive -->
             </div>
             <!--{% include post-content-widget.html %}-->
           </div>
