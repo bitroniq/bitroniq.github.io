@@ -15,10 +15,18 @@ header -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li class="active"><a href="#blog">Blog </a></li>
-        <li><a href="{{ site.baseurl }}/archive/">Archive</a></li>
-        <li><a href="{{ site.baseurl }}/categories/">Categories</a></li>
-        <li><a href="{{ site.baseurl }}/tags/">Tags</a></li>
+        {% if page.url contains '/blog/' %}<li class="active"><a href="#blog">Blog</a></li>
+          {% else %}<li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+        {% endif %}
+        {% if page.url contains '/archive/' %}<li class="active"><a href="#blog">Archive</a></li>
+          {% else %}<li><a href="{{ site.baseurl }}/archive/">Archive</a></li>
+        {% endif %}
+        {% if page.url contains '/categories/' %}<li class="active"><a href="#blog">Categories</a></li>
+          {% else %}<li><a href="{{ site.baseurl }}/categories/">Categories</a></li>
+        {% endif %}
+        {% if page.url contains '/tags/' %}<li class="active"><a href="#blog">Tags</a></li>
+          {% else %}<li><a href="{{ site.baseurl }}/tags/">Tags</a></li>
+        {% endif %}
         <li><a href="#contact" class="page-scroll">Contact</a></li>
       </ul>
     </div>
