@@ -107,7 +107,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: # the subpath of your site, e.g. /blog
-url: "https://bitroniq.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.piotrkowalski.info" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PK0walski
 github_username:  bitroniq
 
@@ -119,7 +119,7 @@ description              : "An amazing personal page with the resume, blog full 
 # repository               : # GitHub username/repo-name e.g. "bitroniq/bitroniq.github.io"
 repository               : "bitroniq/bitroniq.github.io"
 # teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-teaser                   : "https://via.placeholder.com/500x300/?text=teaserImage500x300.jpg"
+teaser                   : "/assets/images/logo.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
