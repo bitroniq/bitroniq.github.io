@@ -39,14 +39,29 @@
             </div>
             <div class="slidebar-link">
               <h3>Categories</h3>
+              <!--=================================
+                  Generating Categories -->
+              {% assign categories_max = 0 %}
+              {% for category in site.categories %}
+                {% if category[1].size > categories_max %}
+                  {% assign categories_max = category[1].size %}
+                {% endif %}
+              {% endfor %}
               <ul>
-                <li><a href="#">Architecture</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Creative</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Development</a></li>
-                <li><a href="#">Education</a></li>
+                {% for i in (1..categories_max) reversed %}
+                  {% for category in site.categories %}
+                    {% if category[1].size == i %}
+                      <li>
+                        <a href="/categories/#{{ category[0] | slugify }}">
+                          <p class="fa fa-folder-open"></p> {{ category[0] }} <span>[{{ i }}]</span>
+                        </a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
               </ul>
+              <!--=================================
+                  End Generating Categories -->
             </div>
             <!--{% include post-content-other.html %}-->
             <div class="slidebar-link">
