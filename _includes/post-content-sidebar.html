@@ -66,14 +66,20 @@
             <!--{% include post-content-other.html %}-->
             <div class="slidebar-link">
               <h3>Archive</h3>
+              <!--=================================
+                  Generating Archive -->
               <ul>
-                <li><a href="#">January 2016 </a></li>
-                <li><a href="#">February 2016 </a></li>
-                <li><a href="#">March 2016 </a></li>
-                <li><a href="#">April 2016 </a></li>
-                <li><a href="#">May 2016 </a></li>
-                <li><a href="#">June 2016 </a></li>
+                {% assign postsInYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+                {% for year in postsInYear %}
+                  <li>
+                    <a href="#{{ year.name }}">
+                      <p class="fa fa-calendar"></p> {{ year.name }} <span class="taxonomy__count">[{{ year.items | size }}]</span>
+                    </a>
+                  </li>
+                {% endfor %}
               </ul>
+              <!--=================================
+                  End Generating Archive -->
             </div>
             <div class="slidebar-tag">
               <h3>Tag Cloud</h3>
