@@ -3,7 +3,7 @@ layout: post
 title: "Markup: HTML Tags and Formatting"
 excerpt: "The excerpt of post with markup html tags and formatting"
 header:
-  teaser: "assets/images/markup-syntax-highlighting-teaser.jpg"
+  teaser: "assets/images/blog/markup-syntax-highlighting-teaser.jpg"
 categories:
   - Markup
 tags:
