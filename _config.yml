@@ -1,5 +1,5 @@
 # Jekyll configuration
-# Site: piotrkowalski.info
+site: www.piotrkowalski.info
 # Site: bitroniq.github.io
 # Copyright (c) 2018 Piotr Kowalski. All rights reserved.
 #
@@ -110,7 +110,7 @@ locale                   : "en-US"
 title                    : "Piotr Kowalski Personal Page"
 title_separator          : "-"
 name                     : "Piotr Kowalski"
-description              : "An amazing personal page with the resume, blog full of technical posts, and some portfolio and galleries."
+description              : "Personal Page with the Resume, Services, Technical Blog, some Portfolio and Galleries."
 # repository               : # GitHub username/repo-name e.g. "bitroniq/bitroniq.github.io"
 repository               : "bitroniq/bitroniq.github.io"
 # teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -181,6 +181,13 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - https://twitter.com/PK0walski
+    - https://www.facebook.com/piotrkowalskiprv
+    - https://www.linkedin.com/in/pkowalski
+    - https://instagram.com/piotr.kowalski.prv
+    - https://github.com/bitroniq
+    - https://www.pinterest.com/piotrkowalskiprv
+    - https://soundcloud.com/h4nter
 
 # Analytics
 analytics:
