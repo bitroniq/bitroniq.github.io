@@ -202,7 +202,7 @@ author:
                      Professionally I have done work for a variety of major organizations including
                      LG, SIEMENS, Sagemcom, Gigaset, Affinegy, KPN, CAT Thailand, France Telecom,
                      Telkom South Africa, Orange Mauritius, VOCUS NZ, TwinLakes and GVTC.
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/logo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an IT guy with lots of passion and ideas for creating new projects."
   location         : "Poland"
   email            :
