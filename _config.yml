@@ -171,7 +171,7 @@ naver_site_verification  :
 twitter:
   username               : "PK0walski"
 facebook:
-  username               : 
+  username               :
   app_id                 :
   publisher              :
 og_image                 : # Open Graph/Twitter default site image
@@ -206,7 +206,7 @@ author:
                      of technologies including Internet and **Web Technologies**, **Automation**, **Administration**, **Software
                      Development Operations**, **Enterprise Solutions**, **Clusters**, **Testing and Unix/Linux
                      Administration**.
-                     
+
                      Professionally I have done work for a variety of major organizations including
                      LG, SIEMENS, Sagemcom, Gigaset, Affinegy, KPN, CAT Thailand, France Telecom,
                      Telkom South Africa, Orange Mauritius, VOCUS NZ, TwinLakes and GVTC.
@@ -242,7 +242,7 @@ author:
 
 
 # Reading Files
-# Incluide - Force inclusion of directories and/or files in theconversion. 
+# Incluide - Force inclusion of directories and/or files in theconversion.
 # .htaccess is a good example since dotfiles are excluded by default.
 include:
   - .htaccess
