@@ -1,9 +1,5 @@
-* linguist-vendored
-_drafts/* linguist-language=Markdown
-_includes/* linguist-language=Liquid
-_layouts/* linguist-language=Liquid
-_pages/* linguist-language=Markdown
-_posts/* linguist-language=Markdown
-admin/* linguist-vendored=false
-assets/* linguist-vendored=false
-blog/* linguist-vendored=false
+_drafts/* linguist-language=HTML
+_includes/* linguist-language=HTML
+_layouts/* linguist-language=HTML
+_pages/* linguist-language=HTML
+_posts/* linguist-language=HTML
