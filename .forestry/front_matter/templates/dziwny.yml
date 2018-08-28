@@ -1,0 +1,10 @@
+---
+label: Dziwny
+hide_body: false
+is_partial: false
+fields:
+- type: boolean
+  default: false
+  label: Labelka
+  name: labelka
+  description: Taka tam labelka
