@@ -6,6 +6,9 @@ tag_sa_fajne: []
 lista_sortowalna:
 - '1'
 image_upload: "/assets/images/uploads/20180824_141850.jpg"
+tagi_sa_fajne:
+- test
+- image
 
 ---
 ## **Strange thing!**
