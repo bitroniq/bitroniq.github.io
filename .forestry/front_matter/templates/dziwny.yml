@@ -15,3 +15,5 @@ fields:
 - type: list
   name: lista_sortowalna
   label: Lista sortowalna
+pages:
+- _posts/forestry-testing-post.md
