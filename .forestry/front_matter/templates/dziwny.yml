@@ -15,5 +15,8 @@ fields:
 - type: list
   name: lista_sortowalna
   label: Lista sortowalna
+- type: file
+  label: Image upload
+  name: image_upload
 pages:
 - _posts/forestry-testing-post.md
