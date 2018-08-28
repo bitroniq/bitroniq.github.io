@@ -8,3 +8,10 @@ fields:
   label: Labelka
   name: labelka
   description: Taka tam labelka
+- type: tag_list
+  name: tag_sa_fajne
+  label: Tag są fajne
+  description: To jest tag
+- type: list
+  name: lista_sortowalna
+  label: Lista sortowalna
