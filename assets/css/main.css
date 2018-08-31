@@ -472,7 +472,7 @@ table.ui-datepicker-calendar tbody td.highlight  a {   background: #c6c6c6;   co
 .contact .powered ul li a:hover { color: #26ade4; }
 .contact .powered h4 { color: #fff; text-transform: uppercase; }
 .contact .powered p { color: #fff; display: block; margin-bottom: 30px; }
-.contact .copyright { margin-top: 40px; display: block; }
+.contact .copyright { margin-top: 70px; display: block; }
 .contact .copyright ul li { display: inline-block; }
 .contact .copyright ul li a { display: block; color: #ffffff; font-size: 16px; padding-right: 30px; }
 .contact .copyright ul li a:hover { color: #07cb79; }
