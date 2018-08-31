@@ -4,219 +4,219 @@
 <!--=================================
  common-contact.html -->
 <section id="contact" class="google-map white-bg page-section-pt">
- <div class="container-fluid">
-  <div id="google-map">
-	 <div id="map-canvas" class="wow animated fadeInUp"></div>
- </div>
- <div class="contact"> 
- 	<h2>Say Hi It’s Free! </h2>
- 	<div class="address">
- 	  <ul>
- 	  	<li><span class="ti-location-pin"></span> <p>Wrocław, Poland | European Union</p> </li>
- 	  	<li><span class="ti-marker-alt"></span> <p id="unspamMail">ofni.ikslawokrtoip@liam</p> </li>
- 	  	<li><span class="ti-mobile"></span> <p>hidden </p></li>
- 	  	<li><span class="ti-github"></span> <p>bitroniq </p></li>
- 	  </ul>
- 	</div>
-  <div class="social">
-    <h4>I'm also on Social Networks</h4>
-    <p>Follow me on social networks to get the latest news, blog, updates and much more.</p>
-    <ul>
-      {% if author.keybase %}
-        <li>
-          <a href="https://keybase.io/{{ author.keybase }}" >
-            <i class="fa fa-key"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.twitter %}
-        <li>
-          <a href="https://twitter.com/{{ author.twitter }}" >
-            <i class="fa fa-twitter"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.facebook %}
-        <li>
-          <a href="https://www.facebook.com/{{ author.facebook }}" >
-            <i class="fa fa-facebook"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.google_plus %}
-        <li>
-          <a href="https://plus.google.com/{{ author.google_plus }}" >
-            <i class="fa fa-google-plus"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.linkedin %}
-        <li>
-          <a href="https://www.linkedin.com/in/{{ author.linkedin }}" >
-            <i class="fa fa-linkedin"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.xing %}
-        <li>
-          <a href="https://www.xing.com/profile/{{ author.xing }}" >
-            <i class="fa fa-xing"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.instagram %}
-        <li>
-          <a href="https://instagram.com/{{ author.instagram }}" >
-            <i class="fa fa-instagram"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.tumblr %}
-        <li>
-          <a href="https://{{ author.tumblr }}.tumblr.com" >
-            <i class="fa fa-tumblr"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.bitbucket %}
-        <li>
-          <a href="https://bitbucket.org/{{ author.bitbucket }}" >
-            <i class="fa fa-bitbucket"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.github %}
-        <li>
-          <a href="https://github.com/{{ author.github }}" >
-            <i class="fa fa-github"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.gitlab %}
-        <li>
-          <a href="https://gitlab.com/{{ author.gitlab }}" >
-            <i class="fa fa-gitlab"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.stackoverflow %}
-        <li>
-          <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" >
-            <i class="fa fa-stack-overflow"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.lastfm %}
-        <li>
-          <a href="https://last.fm/user/{{ author.lastfm }}" >
-            <i class="fa fa-lastfm"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.dribbble %}
-        <li>
-          <a href="https://dribbble.com/{{ author.dribbble }}" >
-            <i class="fa fa-dribbble"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.pinterest %}
-        <li>
-          <a href="https://www.pinterest.com/{{ author.pinterest }}" >
-            <i class="fa fa-pinterest"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.foursquare %}
-        <li>
-          <a href="https://foursquare.com/{{ author.foursquare }}" >
-            <i class="fa fa-foursquare"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.steam %}
-        <li>
-          <a href="https://steamcommunity.com/id/{{ author.steam }}" >
-            <i class="fa fa-steam"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.youtube %}
-        {% if author.youtube contains "://" %}
-          <li>
-            <a href="{{ author.youtube }}" >
-              <i class="fa fa-youtube"></i>
-            </a>
-          </li>
-        {% else author.youtube %}
-          <li>
-            <a href="https://www.youtube.com/user/{{ author.youtube }}" >
-              <i class="fa fa-youtube"></i>
-            </a>
-          </li>
-        {% endif %}
-      {% endif %}
-      {% if author.soundcloud %}
-        <li>
-          <a href="https://soundcloud.com/{{ author.soundcloud }}" >
-            <i class="fa fa-soundcloud"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.weibo %}
-        <li>
-          <a href="https://www.weibo.com/{{ author.weibo }}" >
-            <i class="fa fa-weibo"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.flickr %}
-        <li>
-          <a href="https://www.flickr.com/{{ author.flickr }}" >
-            <i class="fa fa-flickr"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.codepen %}
-        <li>
-          <a href="https://codepen.io/{{ author.codepen }}" >
-            <i class="fa fa-codepen"></i>
-          </a>
-        </li>
-      {% endif %}
-      {% if author.vine %}
-        <li>
-          <a href="https://vine.co/u/{{ author.vine }}" >
-            <i class="fa fa-vine"></i>
-          </a>
-        </li>
-      {% endif %}
-    </ul>
+  <div class="container-fluid">
+    <div id="google-map">
+      <div id="map-canvas" class="wow animated fadeInUp"></div>
+    </div>
+    <div class="contact">
+      <h2>Say Hi It’s Free! </h2>
+      <div class="address">
+        <ul>
+          <li><span class="ti-location-pin"></span> <p>Wrocław, Poland | European Union</p> </li>
+          <li><span class="ti-marker-alt"></span> <p id="unspamMail">ofni.ikslawokrtoip@liam</p> </li>
+          <li><span class="ti-mobile"></span> <p>hidden </p></li>
+          <li><span class="ti-github"></span> <p>bitroniq </p></li>
+        </ul>
+      </div>
+      <div class="social">
+        <h4>I'm also on Social Networks</h4>
+        <p>Follow me on social networks to get the latest news, blog, updates and much more.</p>
+        <ul>
+          {% if author.keybase %}
+            <li>
+              <a href="https://keybase.io/{{ author.keybase }}" >
+                <i class="fa fa-key"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.twitter %}
+            <li>
+              <a href="https://twitter.com/{{ author.twitter }}" >
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.facebook %}
+            <li>
+              <a href="https://www.facebook.com/{{ author.facebook }}" >
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.google_plus %}
+            <li>
+              <a href="https://plus.google.com/{{ author.google_plus }}" >
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.linkedin %}
+            <li>
+              <a href="https://www.linkedin.com/in/{{ author.linkedin }}" >
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.xing %}
+            <li>
+              <a href="https://www.xing.com/profile/{{ author.xing }}" >
+                <i class="fa fa-xing"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.instagram %}
+            <li>
+              <a href="https://instagram.com/{{ author.instagram }}" >
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.tumblr %}
+            <li>
+              <a href="https://{{ author.tumblr }}.tumblr.com" >
+                <i class="fa fa-tumblr"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.bitbucket %}
+            <li>
+              <a href="https://bitbucket.org/{{ author.bitbucket }}" >
+                <i class="fa fa-bitbucket"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.github %}
+            <li>
+              <a href="https://github.com/{{ author.github }}" >
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.gitlab %}
+            <li>
+              <a href="https://gitlab.com/{{ author.gitlab }}" >
+                <i class="fa fa-gitlab"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.stackoverflow %}
+            <li>
+              <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" >
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.lastfm %}
+            <li>
+              <a href="https://last.fm/user/{{ author.lastfm }}" >
+                <i class="fa fa-lastfm"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.dribbble %}
+            <li>
+              <a href="https://dribbble.com/{{ author.dribbble }}" >
+                <i class="fa fa-dribbble"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.pinterest %}
+            <li>
+              <a href="https://www.pinterest.com/{{ author.pinterest }}" >
+                <i class="fa fa-pinterest"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.foursquare %}
+            <li>
+              <a href="https://foursquare.com/{{ author.foursquare }}" >
+                <i class="fa fa-foursquare"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.steam %}
+            <li>
+              <a href="https://steamcommunity.com/id/{{ author.steam }}" >
+                <i class="fa fa-steam"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.youtube %}
+            {% if author.youtube contains "://" %}
+              <li>
+                <a href="{{ author.youtube }}" >
+                  <i class="fa fa-youtube"></i>
+                </a>
+              </li>
+            {% else author.youtube %}
+              <li>
+                <a href="https://www.youtube.com/user/{{ author.youtube }}" >
+                  <i class="fa fa-youtube"></i>
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+          {% if author.soundcloud %}
+            <li>
+              <a href="https://soundcloud.com/{{ author.soundcloud }}" >
+                <i class="fa fa-soundcloud"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.weibo %}
+            <li>
+              <a href="https://www.weibo.com/{{ author.weibo }}" >
+                <i class="fa fa-weibo"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.flickr %}
+            <li>
+              <a href="https://www.flickr.com/{{ author.flickr }}" >
+                <i class="fa fa-flickr"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.codepen %}
+            <li>
+              <a href="https://codepen.io/{{ author.codepen }}" >
+                <i class="fa fa-codepen"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if author.vine %}
+            <li>
+              <a href="https://vine.co/u/{{ author.vine }}" >
+                <i class="fa fa-vine"></i>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="button-large"><a href="#">Download my CV</a></div>
+    </div>
+    <div class="contact-form">
+      <div id="contact-wrapper">
+        <div class="contact-content">
+          <div id="formmessage">Success/Error Message Goes Here</div>
+          <form class="form-horizontal" id="contactform" method="post" action="php/contact-form.php">
+            <div class="contact-form">
+              <h4>Drop me a line</h4>
+              <p>Use this form to tell me about your project goals and needs. I will be in touch within 24 hours.</p>
+              <input id="name" type="text" placeholder="Name*"  name="name">
+              <input type="email" placeholder="Email*" name="email">
+              <input type="text" placeholder="Phone*" name="phone">
+              <textarea class="input-message" placeholder="Comment*" rows="7" name="message"></textarea>
+              <input type="hidden" name="action" value="sendEmail"/>
+              <button id="submit" name="submit" type="submit" value="Send" class="button-small"> Say Hello! </button>
+            </div>
+          </form>
+          <div id="ajaxloader" style="display:none"><img class="center-block" src="/assets/images/ajax-loader-white.gif" alt=""></div>
+        </div>
+        <a href="#" class="contact-toggle"><span class="ti-comments"></span></a>
+      </div>
+    </div>
   </div>
-  <div class="button-large"><a href="#">Download my CV</a></div>
- </div>
- <div class="contact-form">
-   <div id="contact-wrapper">
-    <div class="contact-content">
-     <div id="formmessage">Success/Error Message Goes Here</div>
-       <form class="form-horizontal" id="contactform" method="post" action="php/contact-form.php">
-          <div class="contact-form">
-            <h4>Drop me a line</h4>
-            <p>Use this form to tell me about your project goals and needs. I will be in touch within 24 hours.</p>
-               <input id="name" type="text" placeholder="Name*"  name="name">
-               <input type="email" placeholder="Email*" name="email">
-               <input type="text" placeholder="Phone*" name="phone">
-               <textarea class="input-message" placeholder="Comment*" rows="7" name="message"></textarea>
-             <input type="hidden" name="action" value="sendEmail"/>
-            <button id="submit" name="submit" type="submit" value="Send" class="button-small"> Say Hello! </button>
-          </div> 
-        </form>
-        <div id="ajaxloader" style="display:none"><img class="center-block" src="/assets/images/ajax-loader-white.gif" alt=""></div>
-   </div>
-   <a href="#" class="contact-toggle"><span class="ti-comments"></span></a>
-  </div>
- </div>
- </div>
 </section>
 <!--=================================
  common-contact.html -->
