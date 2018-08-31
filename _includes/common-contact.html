@@ -213,7 +213,7 @@
       <div id="contact-wrapper">
         <div class="contact-content">
           <div id="formmessage">Success/Error Message Goes Here</div>
-          <form class="form-horizontal" id="contactform" method="post" action="php/contact-form.php">
+          <form class="form-horizontal" id="contactform" method="post" action="https://formspree.io/mail@piotrkowalski.info" target="_self">
             <div class="contact-form">
               <h4>Drop me a line</h4>
               <p>Use this form to tell me about your project goals and needs. I will be in touch within 24 hours.</p>
@@ -222,6 +222,9 @@
               <input type="text" placeholder="Phone*" name="phone">
               <textarea class="input-message" placeholder="Comment*" rows="7" name="message"></textarea>
               <input type="hidden" name="action" value="sendEmail"/>
+              <input type="hidden" name="_subject" value="Contact via piotrkowalski.info!" />
+              <input type="hidden" name="_format" value="plain" />
+              <input type="text" name="_gotcha" style="display:none" />
               <button id="submit" name="submit" type="submit" value="Send" class="button-small"> Say Hello! </button>
             </div>
           </form>

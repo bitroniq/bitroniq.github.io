@@ -102,11 +102,12 @@ NOTE:
 /*************************
      PHP contact form 
 *************************/
-  $( "#contactform" ).submit(function( e ) {
+// INFO! You need GOLD PLAN of Formspree for AJAX
+/*  $( "#contactform" ).submit(function( e ) {
     $("#ajaxloader").show();
     $("#contactform").hide();
     $.ajax({
-      url:'php/contact-form.php',
+      url:'https://formspree.io/mail@piotrkowalski.info',
       data:$(this).serialize(),
       type:'post',
       success:function(response){
@@ -118,6 +119,7 @@ NOTE:
     });
     e.preventDefault();
   });
+*/
 
 /*************************
          Chart
