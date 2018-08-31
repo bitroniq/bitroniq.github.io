@@ -102,12 +102,11 @@ NOTE:
 /*************************
      PHP contact form 
 *************************/
-// INFO! You need GOLD PLAN of Formspree for AJAX
 /*  $( "#contactform" ).submit(function( e ) {
     $("#ajaxloader").show();
     $("#contactform").hide();
     $.ajax({
-      url:'https://formspree.io/mail@piotrkowalski.info',
+      url:'/php/contactform.php',
       data:$(this).serialize(),
       type:'post',
       success:function(response){
@@ -120,6 +119,32 @@ NOTE:
     e.preventDefault();
   });
 */
+
+$(function(){
+    $( "#contactform" ).submit(function(e){
+        $("#ajaxloader").show();
+        $("#contactform").hide();
+        e.preventDefault();
+        var href = $(this).attr("action");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: href,
+            data: $(this).serialize(),
+            success: function(response){
+                if(response.status == "success"){
+                  $("#ajaxloader").hide();
+                  $("#contactform").show();
+                  $("#contactform").find("input, textarea").val("");
+                  $("#formmessage").html(response).show().delay(2000).fadeOut('slow');
+                  alert("We received your submission, thank you!");
+                }else{
+                  alert("An error occured: " + response.message);
+                }
+            }
+        });
+    });
+});
 
 /*************************
          Chart
