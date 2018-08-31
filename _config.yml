@@ -369,3 +369,11 @@ defaults:
       comments: true
       share: true
       related: true
+  - scope:
+      path: "admin/*"
+    values:
+      sitemap:  false
+  - scope:
+      path: "signature/*"
+    values:
+      sitemap:  false
