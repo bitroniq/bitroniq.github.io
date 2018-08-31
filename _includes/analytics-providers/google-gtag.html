@@ -7,3 +7,21 @@
 
   gtag('config', '{{ site.analytics.google.tracking_id }}', { 'anonymize_ip': {{ site.analytics.google.anonymize_ip | default: false }}});
 </script>
+<!-- Keeping a clean Address Bar while campaign tracking -->
+<script type="text/javascript">
+function utmRemover() {
+	var cleanSearch = window.location.search
+		.replace(/utm_[^&]+&?/g, '') // removes utm_xxx parameters
+		.replace(/&$/, '')  // removes & if last character
+		.replace(/^\?$/, '')  // removes ? if only remaining character
+		;
+	// some pass utm_xxxx in the hash
+	var cleanHash = window.location.hash
+		.replace(/utm_[^&]+&?/g, '') // removes utm_xxx parameters
+		.replace(/&$/, '')  // removes & if last character
+		.replace(/^\#$/, '')  // removes # if only remaining character
+		;
+	window.history.replaceState({}, '', window.location.pathname + cleanSearch + cleanHash);
+};
+setTimeout(utmRemover, 2000); // remove after 2 second
+</script>
