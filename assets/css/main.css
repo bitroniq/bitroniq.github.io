@@ -460,13 +460,13 @@ table.ui-datepicker-calendar tbody td.highlight  a {   background: #c6c6c6;   co
 .contact .address ul li p { display: table-cell; padding-left: 20px; color: #fff; font-size: 16px; vertical-align: middle; }
 .contact .button-large { margin-top: 70px; }
 .contact .button-large a { font-size: 14px; padding: 20px 30px; }
-.contact .social { margin-top: 70px; display: block; }
+.contact .social { margin-top: 40px; display: block; }
 .contact .social ul li { display: inline-block; }
 .contact .social ul li a { display: block; color: #ffffff; font-size: 16px; padding-right: 30px; }
 .contact .social ul li a:hover { color: #07cb79; }
 .contact .social h4 { color: #fff; text-transform: uppercase; }
 .contact .social p { color: #fff; display: block; margin-bottom: 30px; }
-.contact .powered { margin-top: 40px; display: block; }
+.contact .powered { margin-top: 70px; display: block; }
 .contact .powered ul li { display: inline-block; }
 .contact .powered ul li a { display: block; color: #ffffff; font-size: 16px; padding-right: 30px; }
 .contact .powered ul li a:hover { color: #26ade4; }
