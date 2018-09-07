@@ -227,7 +227,7 @@ NOTE: This is responsive stylesheet of template, This file contains the styling 
 .contact-toggle { right: 40px; bottom: 40px; }
 .page-header { padding: 20px; }
 .page-header-title h1 { font-size: 28px; }
-.page-header { height: 320px; }
+.page-header { height: 350px; }
 .page-header .page-header-title { padding: 70px 0px; }
 .ui-datepicker .ui-datepicker-prev { left: 28px;  }
 .ui-datepicker .ui-datepicker-next { right: 0px; }
