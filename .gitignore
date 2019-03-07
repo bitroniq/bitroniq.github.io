@@ -7,3 +7,4 @@ _site
 .bundle
 Gemfile.lock
 jekyll*.sh
+
