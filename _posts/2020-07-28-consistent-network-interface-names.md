@@ -54,7 +54,7 @@ provide the following benefits:
   configuration and they just work
 * The network interface names are predictable
 
-## Solution for physical servers and 
+## Solution for physical servers
 
 > #### [Predictable Network Interface Names](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/)
 >
