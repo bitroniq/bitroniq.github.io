@@ -5,11 +5,11 @@ excerpt: "Predictable Network Interface Names are the root problem for cloning
 and converting VMs, because every time we clone our VM, we don't know what are
 the interface names on the new VM."
 header:
-  image: "assets/images/blog/2020-07-28_cndn_item01.png"
-  teaser: "assets/images/blog/2020-07-28_cndn_item01.png"
+  image: "assets/images/blog/2020-07-28-cndn-item01.png"
+  teaser: "assets/images/blog/2020-07-28-cndn-item01.png"
 carousel:
-  item1: "assets/images/blog/2020-07-28_cndn_item02.png"
-  item1: "assets/images/blog/2020-07-28_cndn_item03.png"
+  item1: "assets/images/blog/2020-07-28-cndn-item02.png"
+  item1: "assets/images/blog/2020-07-28-cndn-item03.png"
 tags: 
   - devops
   - linux
