@@ -101,17 +101,17 @@ converting VMs, because every time we clone our VM, we don't know what are
 the interface names on the new VM.
 
 ### I don't like this, how do I disable this?
->
-> You basically have three options:
-> 1. You disable the assignment of fixed names, so that the unpredictable
->    kernel names are used again. For this, simply mask udev's .link file for
->    the default policy: ln -s /dev/null /etc/systemd/network/99-default.link
-> 2. You create your own manual naming scheme, for example by naming your
->    interfaces "internet0", "dmz0" or "lan0". For that create your own .link
->    files in /etc/systemd/network/, that choose an explicit name or a better
->    naming scheme for one, some, or all of your interfaces. See
->    systemd.link(5) for more information.
-> 3. You pass the net.ifnames=0 on the kernel command line
+
+You basically have three options:
+1. You disable the assignment of fixed names, so that the unpredictable kernel
+   names are used again. For this, simply mask udev's .link file for
+   the default policy: ln -s /dev/null /etc/systemd/network/99-default.link
+2. You create your own manual naming scheme, for example by naming your
+   interfaces "internet0", "dmz0" or "lan0". For that create your own .link
+   files in /etc/systemd/network/, that choose an explicit name or a better
+   naming scheme for one, some, or all of your interfaces. See
+   systemd.link(5) for more information.
+3. You pass the net.ifnames=0 on the kernel command line
 
 ### Example solution for Ubuntu 18.04
 
@@ -131,7 +131,7 @@ update-grub
 apt-get remove biosdevname -y || true;
 ```
 
-### Solution C.
+#### Solution C.
 
 Run this script, and if the output looks good, redirect the output into
 /etc/udev/rules.d/70-persistent-net.rules to build new udev rules in case the
