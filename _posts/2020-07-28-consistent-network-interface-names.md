@@ -1,26 +1,35 @@
 ---
 layout: post
+
 title: "Consistent Network Device Naming (CNDN) when cloning or converting VMs"
+
 excerpt: "Predictable Network Interface Names are the root problem for cloning
 and converting VMs, because every time we clone our VM, we don't know what are
 the interface names on the new VM."
+
 header:
   image: "assets/images/blog/2020-07-28-cndn-item01.png"
   teaser: "assets/images/blog/2020-07-28-cndn-item01.png"
+
 carousel:
   item1: "assets/images/blog/2020-07-28-cndn-item02.png"
-  item1: "assets/images/blog/2020-07-28-cndn-item03.png"
-tags: 
-  - devops
-  - linux
-  - networking
-  - hypervisors
-  - VirtualBox
-  - VMware
-  - ESXi
-  - Hyper-V
+  item2: "assets/images/blog/2020-07-28-cndn-item03.png"
+
+tags:
+
+- devops
+- linux
+- networking
+- hypervisors
+- VirtualBox
+- VMware
+- ESXi
+- Hyper-V
+
 categories:
-  - DevOps
+
+- DevOps
+
 ---
 
 ## The Problem
@@ -50,27 +59,27 @@ card or if it is on an add-in card with multiple ports and which port on the
 card it is located). Hence you need a consistent device naming scheme that can
 provide the following benefits:
 
-* Stable network interface names across reboots
-* Stable network interface names when you add or remove hardware
-* Stable network interface names when you update/change the kernel or device
-  drivers
-* Stable network interface names when you replace a broken/defective ethernet
+1. Stable network interface names across reboots
+1. Stable network interface names when you add or remove hardware
+1. Stable network interface names when you update/change the kernel or device
+   drivers
+1. Stable network interface names when you replace a broken/defective ethernet
   card for example, with a new one
-* The network interface names automatically get determined without user
+1. The network interface names automatically get determined without user
   configuration and they just work
-* The network interface names are predictable
+1. The network interface names are predictable
 
 ## Solution for physical servers
 
-> #### [Predictable Network Interface Names](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/)
->
+### [Predictable Network Interface Names](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/)
+
 > Starting with v197 systemd/udev will automatically assign predictable, stable
 > network interface names for all local Ethernet, WLAN and WWAN interfaces.
 > This is a departure from the traditional interface naming scheme ("eth0",
 > "eth1", "wlan0", ...), but should fix real problems.
->
-> #### Why?
->
+
+#### The Purpose
+
 > The classic naming scheme for network interfaces applied by the kernel is to
 > simply assign names beginning with "eth0", "eth1", ... to all interfaces as
 > they are probed by the drivers. As the driver probing is generally not
@@ -107,19 +116,20 @@ the interface names on the new VM.
 ### I don't like this, how do I disable this?
 
 You basically have three options:
+
 1. You disable the assignment of fixed names, so that the unpredictable kernel
    names are used again. For this, simply mask udev's .link file for
    the default policy: ln -s /dev/null /etc/systemd/network/99-default.link
-2. You create your own manual naming scheme, for example by naming your
+1. You create your own manual naming scheme, for example by naming your
    interfaces "internet0", "dmz0" or "lan0". For that create your own .link
    files in /etc/systemd/network/, that choose an explicit name or a better
    naming scheme for one, some, or all of your interfaces. See
    systemd.link(5) for more information.
-3. You pass the net.ifnames=0 on the kernel command line
+1. You pass the net.ifnames=0 on the kernel command line
 
 ### Example solution for Ubuntu 18.04
 
-#### Solution A.
+#### Solution A
 
 ```bash
 sudo echo 'GRUB_CMDLINE_LINUX="biosdevname=0 net.ifnames=0"' >> /etc/default/grub
@@ -127,7 +137,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo reboot
 ```
 
-#### Solution B.
+#### Solution B
 
 ```bash
 sed -i.bak 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 bios.devname=0 quiet"/' /etc/default/grub
@@ -135,7 +145,7 @@ update-grub
 apt-get remove biosdevname -y || true;
 ```
 
-#### Solution C.
+#### Solution C
 
 Run this script, and if the output looks good, redirect the output into
 /etc/udev/rules.d/70-persistent-net.rules to build new udev rules in case the
@@ -162,12 +172,12 @@ for d in ${edev[@]}; do
 done
 ```
 
-### References
-* [Consistent Network Device Naming (CNDN)
-](https://docs.vmware.com/en/VMware-Adapter-for-SAP-Landscape-Management/services/Administration-Guide-for-LaMa-Administrators/GUID-3979BFD8-D9DB-4C53-9FB8-AC89E024693B.html)
-* [FreeDesktop.org - systemd/ PredictableNetworkInterfaceNames](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/)
+## References
+
+1. [Consistent Network Device Naming (CNDN)](https://docs.vmware.com/en/VMware-Adapter-for-SAP-Landscape-Management/services/Administration-Guide-for-LaMa-Administrators/GUID-3979BFD8-D9DB-4C53-9FB8-AC89E024693B.html)
+1. [FreeDesktop.org - systemd/ PredictableNetworkInterfaceNames](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/)
   * [systemd.link](https://www.freedesktop.org/software/systemd/man/systemd.link.html)
-* [stackexchange.com - Predictable Network Interface Names break vm migration](https://unix.stackexchange.com/questions/335461/predictable-network-interface-names-break-vm-migration)
-* [NetworkInterfaceNames - "Predictable Names" Migration HOWTO](https://wiki.debian.org/NetworkInterfaceNames)
-* [Solution for Ubuntu 18.04](https://github.com/geerlingguy/packer-boxes/issues/1#issuecomment-213116792)
+1. [stackexchange.com - Predictable Network Interface Names break vm migration](https://unix.stackexchange.com/questions/335461/predictable-network-interface-names-break-vm-migration)
+1. NetworkInterfaceNames - "Predictable Names" Migration HOWTO](https://wiki.debian.org/NetworkInterfaceNames)
+1. [Solution for Ubuntu 18.04](https://github.com/geerlingguy/packer-boxes/issues/1#issuecomment-213116792)
 
