@@ -37,7 +37,8 @@ provide the following benefits:
   configuration and they just work
 * The network interface names are predictable
 
-## Root Cause of the Problem
+## Solution for physical servers and root problem for cloning and converting
+VMs
 
 > #### [Predictable Network Interface Names](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/)
 >
@@ -74,7 +75,9 @@ provide the following benefits:
 > support for this has been removed from systemd/udev a while back
 >
 > [...]
->
+
+## Predictable Network Interface Names break VM migration and cloning
+
 > ### I don't like this, how do I disable this?
 >
 > You basically have three options:
