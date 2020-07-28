@@ -37,8 +37,7 @@ provide the following benefits:
   configuration and they just work
 * The network interface names are predictable
 
-## Solution for physical servers and root problem for cloning and converting
-VMs
+## Solution for physical servers and 
 
 > #### [Predictable Network Interface Names](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/)
 >
@@ -78,7 +77,11 @@ VMs
 
 ## Predictable Network Interface Names break VM migration and cloning
 
-> ### I don't like this, how do I disable this?
+Predictable Network Interface Names are the root problem for cloning and
+converting VMs, because every time we clone our VM, we don't know what are
+the interface names on the new VM.
+
+### I don't like this, how do I disable this?
 >
 > You basically have three options:
 > 1. You disable the assignment of fixed names, so that the unpredictable
