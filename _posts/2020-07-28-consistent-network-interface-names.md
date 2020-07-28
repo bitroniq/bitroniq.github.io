@@ -8,9 +8,9 @@ and converting VMs, because every time we clone our VM, we don't know what are
 the interface names on the new VM."
 
 header:
-  image: "assets/images/blog/2020-07-28-cndn.png"
-  teaser: "assets/images/blog/2020-07-28-cndn.png"
-  og_image: "assets/images/blog/2020-07-28-cndn.png"
+  image: "assets/images/blog/2020-07-28-cndn.jpg"
+  teaser: "assets/images/blog/2020-07-28-cndn.jpg"
+  og_image: "assets/images/blog/2020-07-28-cndn.jpg"
 
 carousel:
   item1: "assets/images/blog/2020-07-28-cndn-item01.png"
