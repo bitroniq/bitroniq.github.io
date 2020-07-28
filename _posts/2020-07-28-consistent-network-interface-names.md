@@ -1,12 +1,41 @@
 # Consistent Network Device Naming (CNDN) when cloning or converting VMs
 
-## Problem
+## The Problem
 
-For vGateway base images and vGateway Generator we need Consistent Network
-Device Naming (CNDN) that remain across cloning VMs or converting to other
-formats like VMware, VirtualBox, Hyper-V, AMI.
+Modern server platforms support an increasing number of network interface ports
+on the motherboard (Lan-on-Motherboard or LOM) in addition to numerous add-in
+(single and multiport) adapters. Traditionally, network interfaces are
+enumerated as eth[012...], but these names do not necessarily correspond to the
+actual labels as seen on the chassis. This new naming convention assigns names
+to network interfaces based on their physical location, whether embedded or in
+PCI slots. By converting to this naming convention, system administrators will
+no longer have to guess at the physical location of a network port, or modify
+each system to rename them into some consistent order.
 
-In other words, we need interfaces to always remain: `eth0`, `eth1`.
+In this classic naming scheme for network interfaces, the kernel simply assigns
+the names beginning with `eth0`, `eth1`, ... to all the interfaces as they are
+probed by the device drivers during the system boot process. As the driver
+probing is generally not predictable, in a multi network interfaces setup, a
+given network interface that for example, got a name assignment `eth0` in the
+first boot may end up with a different name on the next boot. This is
+undesirable and can have serious security implications, for example in firewall
+rules which are coded for certain naming schemes and which are hence very
+sensitive to unpredictable changing names. Also, this naming scheme gives no
+clue whatsoever of the interface's physical location on the system (for
+example, whether it is on the system's motherboard or if it is on an add-in
+card or if it is on an add-in card with multiple ports and which port on the
+card it is located). Hence you need a consistent device naming scheme that can
+provide the following benefits:
+
+* Stable network interface names across reboots
+* Stable network interface names when you add or remove hardware
+* Stable network interface names when you update/change the kernel or device
+  drivers
+* Stable network interface names when you replace a broken/defective ethernet
+  card for example, with a new one
+* The network interface names automatically get determined without user
+  configuration and they just work
+* The network interface names are predictable
 
 ## Root Cause of the Problem
 
