@@ -14,7 +14,7 @@ header:
 
 carousel:
   item1: "assets/images/blog/2020-07-28-cndn-item01.png"
-  item2: "assets/images/blog/2020-07-28-cndn-item03.png"
+  item2: "assets/images/blog/2020-07-28-cndn-item02.png"
   item3: "assets/images/blog/2020-07-28-cndn-item03.png"
 
 tags:
