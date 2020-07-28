@@ -17,8 +17,6 @@ categories:
   - DevOps
 ---
 
-# Consistent Network Device Naming (CNDN) when cloning or converting VMs
-
 ## The Problem
 
 Modern server platforms support an increasing number of network interface ports
