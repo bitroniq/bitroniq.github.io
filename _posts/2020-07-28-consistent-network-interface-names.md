@@ -1,3 +1,22 @@
+---
+layout: post
+title: "Consistent Network Device Naming (CNDN) when cloning or converting VMs"
+excerpt: "Predictable Network Interface Names are the root problem for cloning
+and converting VMs, because every time we clone our VM, we don't know what are
+the interface names on the new VM."
+tags: 
+  - devops
+  - linux
+  - networking
+  - hypervisors
+  - VirtualBox
+  - VMware
+  - ESXi
+  - Hyper-V
+categories:
+  - DevOps
+---
+
 # Consistent Network Device Naming (CNDN) when cloning or converting VMs
 
 ## The Problem
