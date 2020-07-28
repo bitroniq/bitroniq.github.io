@@ -8,13 +8,14 @@ and converting VMs, because every time we clone our VM, we don't know what are
 the interface names on the new VM."
 
 header:
-  image: "assets/images/blog/2020-07-28-cndn-item01.png"
-  teaser: "assets/images/blog/2020-07-28-cndn-item01.png"
-  og_image: "assets/images/blog/2020-07-28-cndn-item01.png"
+  image: "assets/images/blog/2020-07-28-cndn.png"
+  teaser: "assets/images/blog/2020-07-28-cndn.png"
+  og_image: "assets/images/blog/2020-07-28-cndn.png"
 
 carousel:
-  item1: "assets/images/blog/2020-07-28-cndn-item02.png"
+  item1: "assets/images/blog/2020-07-28-cndn-item01.png"
   item2: "assets/images/blog/2020-07-28-cndn-item03.png"
+  item3: "assets/images/blog/2020-07-28-cndn-item03.png"
 
 tags:
 
