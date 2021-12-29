@@ -46,7 +46,7 @@ it to DigitalOcean.
 The Reverse DNS is configured automatically from our end based on the droplet’s
 hostname.
 
-To rename your droplet via the control panel, do the following:
+### To rename your droplet via the control panel, do the following:
 
 1. Login to the Digital Ocean Control Panel
 2. Go to `Droplets` --> Click the droplet you want to rename
@@ -54,14 +54,15 @@ To rename your droplet via the control panel, do the following:
    of your droplet (you wouldn’t know you could)
 4. Change the name in the entry field and click the check mark
 
-To confirm the settings are correct:
+### To confirm the settings are correct:
 
 1. From the left menu select `Networking`
 2. Select `PTR records` tab
 
-Finally, make sure you also edit your droplet’s hostname internally as well.
+### Finally, make sure you also edit your droplet’s hostname internally as well.
 
-1. Update `/etc/hostame` or on Ubuntu use `sudo hostnamectl set-hostname mysub.domain.com`
+1. Update `/etc/hostame`
+   - on Ubuntu use `sudo hostnamectl set-hostname mysub.domain.com`
 2. Update `/etc/hosts`
 
    ```bash
@@ -70,6 +71,8 @@ Finally, make sure you also edit your droplet’s hostname internally as well.
    ```
 
 3. `sudo reboot`
+
+### Verification
 
 The PTR should be automatically adjusted in few hours due to DNS cache.
 
