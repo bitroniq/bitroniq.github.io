@@ -61,16 +61,14 @@ hostname.
 
 ### Finally, make sure you also edit your droplet’s hostname internally as well.
 
-1. Update `/etc/hostame`
+1. Update `/etc/hostame` file
    - on Ubuntu use `sudo hostnamectl set-hostname mysub.domain.com`
-2. Update `/etc/hosts`
-
+2. Update `/etc/hosts` file
    ```bash
    127.0.0.1 localhost mysub
    127.0.1.1 mysub.domain.com
    ```
-
-3. `sudo reboot`
+3. Reboot your droplet (VM) with `sudo reboot`
 
 ### Verification
 
