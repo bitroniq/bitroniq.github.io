@@ -64,12 +64,10 @@ hostname.
 1. Update `/etc/hostname` file
    - on Ubuntu use `sudo hostnamectl set-hostname subdomain.domain.com`
 2. Update `/etc/hosts` file
-
    ```bash
    127.0.0.1 localhost subdomain
    127.0.1.1 subdomain.domain.com
    ```
-
 3. Reboot your droplet (VM) with `sudo reboot`
 
 ### Verification
