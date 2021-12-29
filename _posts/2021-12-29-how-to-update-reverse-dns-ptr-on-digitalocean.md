@@ -28,7 +28,7 @@ categories:
 
 ---
 
-# How to update reverse dns (PTR) record on DigitalOcean
+## Why do I need revDNS (PTR) record
 
 If you have, for example Ubuntu 20.04 droplet on DigitalOcean, used to host a
 WordPress using localhost MTA to send mail notifications, you need to set up a
@@ -46,7 +46,7 @@ it to DigitalOcean.
 The Reverse DNS is configured automatically from our end based on the droplet’s
 hostname.
 
-### To rename your droplet via the control panel, do the following:
+### To rename your droplet via the control panel
 
 1. Login to the Digital Ocean Control Panel
 2. Go to `Droplets` --> Click the droplet you want to rename
@@ -54,20 +54,22 @@ hostname.
    of your droplet (you wouldn’t know you could)
 4. Change the name in the entry field and click the check mark
 
-### To confirm the settings are correct:
+### To confirm the settings are correct
 
 1. From the left menu select `Networking`
 2. Select `PTR records` tab
 
-### Finally, make sure you also edit your droplet’s hostname internally as well.
+### Finally, make sure you also edit your droplet’s hostname internally
 
-1. Update `/etc/hostame` file
-   - on Ubuntu use `sudo hostnamectl set-hostname mysub.domain.com`
+1. Update `/etc/hostname` file
+   - on Ubuntu use `sudo hostnamectl set-hostname subdomain.domain.com`
 2. Update `/etc/hosts` file
+
    ```bash
-   127.0.0.1 localhost mysub
-   127.0.1.1 mysub.domain.com
+   127.0.0.1 localhost subdomain
+   127.0.1.1 subdomain.domain.com
    ```
+
 3. Reboot your droplet (VM) with `sudo reboot`
 
 ### Verification
