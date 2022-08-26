@@ -1,5 +1,9 @@
 # Linux ip route and ip rule Basics
 
+The goal for this setup is to configure routing based on `ip rule`(s) and dedicated route tables, so that traffic between the `Host1` and `Host2` always goes through the Bastion Host.
+
+Bastion Host is connected with Gateway Host using IPsec tunnel.
+
 ## Prerequisites
 
 1. Bastion host on the cloud with public IP
@@ -15,7 +19,7 @@ Bastion Host
 194.204.152.34
      ^
      |
-     |
+     |IPsec tunnel
      |
      v
  Router with NAT
